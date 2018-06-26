@@ -1,0 +1,29 @@
+.select_container_test{
+	margin: auto;
+	padding:10px;
+	padding-top:20px;
+	width: 1000px;
+	height: 400px;	
+	overflow: auto;
+}
+
+.select_container_test a{
+	font-family:Fredoka One;
+	color: #bfbfbf;
+	font-size: 24px;
+	text-decoration: none; 
+	margin:auto;
+	margin-bottom:10px;
+	border: 2px solid #bfbfbf;
+	width:900px;
+	height: 30px;
+	padding:5px;
+	display: block;
+	border-radius: 10px;
+}
+
+.select_container_test a:hover{
+	border: 2px solid #8ab1eb;
+	color: #8ab1eb;
+}
+
