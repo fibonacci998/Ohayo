@@ -20,7 +20,7 @@
                     <div class="menu_nav">
                         <ul>
                             <li><a href="index.jsp"><span>Home Page</span></a></li>
-                            <li><a href="dictionary.jsp"><span>Dictionary</span></a></li>
+                            <li><a href="book.jsp"><span>Dictionary</span></a></li>
                             <li class="active"><a href="learning.jsp"><span>Learning</span></a></li>
                             <li><a href="minigames.jsp"><span>Mini games</span></a></li>
                             <li><a href="test.jsp"><span>Test</span></a></li>
@@ -28,7 +28,7 @@
                         </ul>
                     </div>
                     <div class="logo">
-                        <h1><a href="index.html">Ohayo<span>!</span></a></h1>
+                        <h1><a href="index.jsp">Ohayo<span>!</span></a></h1>
                     </div>
                     <div class="clr"></div>
                 </div>

@@ -26,17 +26,17 @@
       <div class="menu_nav">
         
         <ul>
-          <li class="active"><a href="index.html"><span>Home Page</span></a></li>
-          <li><a href="dictionary.html"><span>Dictionary</span></a></li>
-          <li><a href="learning.html"><span>Learning</span></a></li>
-          <li><a href="minigames.html"><span>Mini games</span></a></li>
-          <li><a href="test.html"><span>Test</span></a></li>
-          <li><a href="mywords.html"><span>My words</span></a></li>
+          <li class="active"><a href="index.jsp"><span>Home Page</span></a></li>
+          <li><a href="book.jsp"><span>Dictionary</span></a></li>
+          <li><a href="learning.jsp"><span>Learning</span></a></li>
+          <li><a href="minigames.jsp"><span>Mini games</span></a></li>
+          <li><a href="test.jsp"><span>Test</span></a></li>
+          <li><a href="mywords.jsp"><span>My words</span></a></li>
         </ul>
         
       </div>
       <div class="logo">
-        <h1><a href="index.html">Ohayo<span>!</span></a></h1>
+        <h1><a href="index.jsp">Ohayo<span>!</span></a></h1>
       </div>
       
       <div class="clr"></div>
