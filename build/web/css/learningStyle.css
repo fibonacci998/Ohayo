@@ -7,6 +7,7 @@ and open the template in the editor.
     Created on : Jun 9, 2018, 8:30:58 AM
     Author     : Laptop VINHLINK
 */
+
 @charset "utf-8";
 @font-face{
     font-family: 'Fredoka One';
@@ -24,14 +25,74 @@ and open the template in the editor.
 
 #title_choose_lesson {
     margin-left: 100px;
-
     font-weight: bold;
     color: #8AB1EB;
+  
 }
+
 .main_content table {
-    margin: auto;
-    width: 1000px;
+    margin-left: 20px;
+    width: 500px;
 }
+
+
+#tableLeft {
+    margin-left: 20px;
+    width: 800px;
+   
+}
+
+#tableRight {
+    margin-right: 20px;
+    width: 800px;
+   
+    
+}
+
+#tableLeft a {
+    font-family:Fredoka One;
+    color: #bfbfbf;
+    font-size: 24px;
+    text-decoration: none; 
+    margin-left: 30px ;
+    margin-bottom: 30px;
+    border: 2px solid #bfbfbf;
+    width: 450px;
+    height: 50px;
+    padding: 20px;
+    display: block;
+    border-radius: 10px; 
+}
+
+#tableLeft a:hover{
+    border: 2px solid #8ab1eb;
+    color: #8ab1eb;
+}
+
+
+#tableRight a {
+    font-family:Fredoka One;
+    color: #bfbfbf;
+    font-size: 24px;
+    text-decoration: none; 
+    margin-left: 30px ;
+    margin-bottom: 30px;
+    border: 2px solid #bfbfbf;
+    width: 450px;
+    height: 50px;
+    padding: 20px;
+    display: block;
+    border-radius: 10px;
+   
+}
+
+#tableRight a:hover{
+    border: 2px solid #8ab1eb;
+    color: #8ab1eb;
+}
+
+
+/*=====================================*/
 
 #table_title_learning {
     color: #3EDFA8;
@@ -39,57 +100,99 @@ and open the template in the editor.
     font-weight: bold
 }
 
-.container_words {
+.container_lessons {
     margin: auto;
-    padding:10px;
-    padding-top:20px;
-    width: 500px;
-
-    /* border: 2px solid #bfbfbf;	 */
-    overflow: auto;
+    padding: 20px;
+    width: 1000px;
+    height: 70px;
 }
 
-.container_words p{
-    font-family:Fredoka One;
-    color: #bfbfbf;
-    font-size: 24px;
-    text-decoration: none; 
-    margin:auto;
-    margin-bottom:10px;
-    border: 2px solid #bfbfbf;
-    width:450px;
-    height: 30px;
-    padding:5px;
-    display: block;
-    border-radius: 10px;
-}
 
-.container_words p:hover{
-    border: 2px solid #8ab1eb;
-    color: #8ab1eb;
-}
-
-.container_words a {
+.container_lessons a {
     font-family:Fredoka One;
     color: #bfbfbf;
     font-size: 24px;
     text-decoration: none; 
     margin: auto;
-    margin-bottom:10px;
     border: 2px solid #bfbfbf;
-    width:450px;
-    height: 30px;
-    padding:5px;
+    width: 900px;
+    height: 50px;
+    padding: 25px;
+    padding-bottom: 20px;
     display: block;
     border-radius: 10px;
    
 }
 
-.container_words a:hover{
+.container_lessons a:hover{
     border: 2px solid #8ab1eb;
     color: #8ab1eb;
 }
 
+
+
+
+/*============= flashcard =================*/
+#flashGround{
+        background-color: #bfbfbf;
+}
+
+
+
+.select_container_learning{
+	margin: auto;
+	padding:10px;
+	padding-top:20px;
+	width: 1000px;
+	height: 30px;
+	overflow: auto;
+        
+}
+
+.select_container_learning a{
+	font-family:Fredoka One;
+	color: #bfbfbf;
+	font-size: 24px;
+	text-decoration: none; 
+	margin:auto;
+	margin-bottom:10px;
+	border: 2px solid #bfbfbf;
+	width:500px;
+	height: 30px;
+	padding:5px;
+	display: block;
+	border-radius: 10px;
+}
+
+.select_container_learning a:hover{
+	border: 2px solid #8ab1eb;
+	color: #8ab1eb;
+}
+
+
+/*================================*/
+/*this class is for paging*/
+.pagination {
+    display: inline-block;
+    margin-left: 500px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.pagination a {
+    color: black;
+    background-color: #ddd;
+    padding: 8px 16px;
+    text-decoration: none;
+   
+}
+
+.pagination a:hover:not(.active) {
+   background-color: #4CAF50;
+   color: white;
+    border-radius: 5px;
+}
+/*======================*/
 
 
 #button_begin {
@@ -126,8 +229,9 @@ and open the template in the editor.
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    margin-left: 320px;
+    
     margin-right: 20px;
+    float: right;
 }
 
 #button_next:hover {
@@ -135,13 +239,10 @@ and open the template in the editor.
 }
 
 
-
-
-
 .sign_home {
     float: right;
-    /* height: 30px; */
-    /* width: 200px; */
+     height: 30px; 
+     width: 200px; 
     font-size: 12px;
     color: white;
     margin-right: 160px;
@@ -160,10 +261,9 @@ and open the template in the editor.
 
 
 
+ body {font-family: Arial, Helvetica, sans-serif;} 
 
-/* body {font-family: Arial, Helvetica, sans-serif;} */
-
-/* Full-width input fields */
+ /*Full-width input fields*/ 
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -173,7 +273,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-/* Set a style for all buttons */
+ /*Set a style for all buttons*/ 
 button {
     background-color: #4d4dff;
     color: white;
@@ -188,14 +288,14 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Extra styles for the cancel button */
+ /*Extra styles for the cancel button*/ 
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
 }
 
-/* Center the image and position the close button */
+ /*Center the image and position the close button*/ 
 .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
@@ -216,30 +316,30 @@ span.psw {
     padding-top: 16px;
 }
 
-/* The Modal (background) */
+ /*The Modal (background)*/ 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;     /*Hidden by default*/ 
+    position: fixed;      /*Stay in place*/ 
+    z-index: 1;     /*Sit on top*/ 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;      /*Full width*/ 
+    height: 100%;    /*Full height*/ 
+    overflow: auto;    /*Enable scroll if needed*/ 
+    background-color: rgb(0,0,0);    /*Fallback color*/ 
+    background-color: rgba(0,0,0,0.4);    /*Black w/ opacity*/ 
     padding-top: 60px;
 }
 
-/* Modal Content/Box */
+ /*Modal Content/Box*/ 
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto;  /*5% from the top, 15% from the bottom and centered*/ 
     border: 1px solid #888;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 30%;  /*Could be more or less, depending on screen size */
 }
 
-/* The Close Button (x) */
+ /*The Close Button (x)*/ 
 .close {
     position: absolute;
     right: 25px;
@@ -255,7 +355,7 @@ span.psw {
     cursor: pointer;
 }
 
-/* Add Zoom Animation */
+ /*Add Zoom Animation*/ 
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
@@ -270,3 +370,8 @@ span.psw {
     from {transform: scale(0)} 
     to {transform: scale(1)}
 }
+
+
+
+
+

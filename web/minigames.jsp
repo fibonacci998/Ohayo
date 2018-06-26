@@ -22,15 +22,15 @@
       <div class="menu_nav">
         <ul>
           <li><a href="index.jsp"><span>Home Page</span></a></li>
-          <li><a href="book.jsp"><span>Dictionary</span></a></li>
+          <li><a href="book.jsp"><span>Book</span></a></li>
           <li><a href="learning.jsp"><span>Learning</span></a></li>
-          <li class="active"><a href="GameMenu.jsp"><span>Mini games </span></a></li>
+          <li class="active"><a href="minigames.jsp"><span>Mini games </span></a></li>
           <li><a href="test.jsp"><span>Test</span></a></li>
           <li><a href="mywords.jsp"><span>My words</span></a></li>
         </ul>
       </div>
       <div class="logo">
-        <h1><a href="css/index.jsp">Ohayo<span>!</span></a></h1>
+        <h1><a href="./css/index.jsp">Ohayo<span>!</span></a></h1>
       </div>
         <div class="clr"> 
         </div>
@@ -38,15 +38,13 @@
 		
 		<button class="btn-game-menu" onClick="location.href='minigames_FlashCard.jsp' " >
 			Flash Card
-			
-			
 		</button> 
 		<button class="btn-game-menu"  >
 			Zeus battle
 		</button> 
 		<p style=" margin-left:200px">
 		<button class="btn-game-menu">
-			Clound Storm
+			Cloud Storm
 		</button> 
 		</p>
         </div>

@@ -27,9 +27,9 @@
       <div class="menu_nav">
         <ul>
           <li><a href="index.jsp"><span>Home Page</span></a></li>
-          <li><a href="book.jsp"><span>Dictionary</span></a></li>
+          <li><a href="book.jsp"><span>Book</span></a></li>
           <li><a href="learning.jsp"><span>Learning</span></a></li>
-          <li><a href="GameMenu.jsp"><span>Mini games</span></a></li>
+          <li><a href="minigames.jsp"><span>Mini games</span></a></li>
           <li><a href="test.jsp"><span>Test</span></a></li>
           <li class="active"><a href="mywords.jsp"><span>My words</span></a></li>
         </ul>

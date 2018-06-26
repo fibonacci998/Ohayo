@@ -1,3 +1,10 @@
+<%-- 
+    Document   : minigames_FlashCard
+    Created on : Jun 27, 2018, 5:48:51 AM
+    Author     : Wasd
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,9 +20,9 @@
       <div class="menu_nav">
         <ul>
           <li><a href="index.jsp"><span>Home Page</span></a></li>
-          <li><a href="book.jsp"><span>Dictionary</span></a></li>
+          <li><a href="book.jsp"><span>Book</span></a></li>
           <li><a href="learning.jsp"><span>Learning</span></a></li>
-          <li class="active"><a href="GameMenu.jsp"><span>Mini games </span></a></li>
+          <li class="active"><a href="minigames.jsp"><span>Mini games </span></a></li>
           <li><a href="test.jsp"><span>Test</span></a></li>
           <li><a href="mywords.jsp"><span>My words</span></a></li>
         </ul>
