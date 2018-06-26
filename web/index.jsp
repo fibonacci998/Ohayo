@@ -11,7 +11,7 @@
 <title>Ohayo!</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="./css/style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="css/home.css" type="text/css"/>
+<link rel="stylesheet" href="./css/home.css" type="text/css"/>
 <script src="./js/home.js"></script>
 </head>
 <body>
@@ -27,7 +27,7 @@
         
         <ul>
           <li class="active"><a href="index.jsp"><span>Home Page</span></a></li>
-          <li><a href="book.jsp"><span>Dictionary</span></a></li>
+          <li><a href="book.jsp"><span>Book</span></a></li>
           <li><a href="learning.jsp"><span>Learning</span></a></li>
           <li><a href="minigames.jsp"><span>Mini games</span></a></li>
           <li><a href="test.jsp"><span>Test</span></a></li>
