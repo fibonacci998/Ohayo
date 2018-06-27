@@ -14,8 +14,6 @@
         <title>Ohayo | Learning</title>
         <link href="./css/style.css" rel="stylesheet" type="text/css" />
         <link href="./css/learningStyle.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="./css/home.css" type="text/css"/>
-<script src="./js/home.js"></script>
     </head>
     <body>
 
