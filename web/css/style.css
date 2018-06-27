@@ -53,10 +53,9 @@ a {
 	width:960px;
 }
 .logo {
-	margin-left:20px;
-	padding:0;
+	padding:auto;
 	float:left;
-	width:auto;
+        margin:0;
 	height:118px;
 	font-family: Fredoka One;
         position: absolute;
@@ -136,8 +135,7 @@ h1 small {
 	font-family: Fredoka One;
 }
 .main_content{
-	margin-left: 20px;
-	margin-bottom: 20px;
+	margin:auto;
 }
 
 .group_button_mywords{

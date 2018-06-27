@@ -20,6 +20,7 @@
     <body>
 
         <%@include file="header.jsp" %> 
+        <div class="main_content">
         <jsp:useBean id="b" class="bean.LessonBean" scope="session"/>
         <jsp:setProperty name="b" property="*"/>
         <div class="main_content"> 
@@ -51,7 +52,7 @@
             <table>
             </table>
         </div>
-
+        </div>
         <%@include file="footer.jsp" %>
     </body>
 </html>
