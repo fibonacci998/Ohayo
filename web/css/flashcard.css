@@ -66,10 +66,6 @@ and open the template in the editor.
 
 
 .container_flashcard {
-    /*font-family:Fredoka One;*/
-    /*color: #8ab1eb;*/
-    /*font-size: 24px;*/
-    /*text-decoration: none;*/ 
     margin: auto;
     margin-bottom: 20px;
     margin-top: 20px;
@@ -113,26 +109,6 @@ and open the template in the editor.
     padding-left: 100px
 
 }
-
-
-/*#button_forward_learn {
-    background-color: #8ab1eb;
-    color: white;
-    padding: 14px 25px;
-    text-align: center; 
-    text-decoration: none;
-    display: inline-block;
-    border: 2px solid #8ab1eb;
-    border-radius: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    margin-left: 320px;
-    margin-right: 10%;
-}
-
-#button_forward_learn:hover {
-    background-color:#5d96ea;
-}*/
 
 
 /*===========================================*/
@@ -207,14 +183,6 @@ and open the template in the editor.
     border-radius: 5px;
 }
 
-.vertical_line {
-    border-left: 6px solid green;
-    height: 45px;
-    /*position: absolute;*/
-    left: 50%;
-    /*margin-left: -3px;*/
-    /*top: 0;*/
-}
 
 
 body {font-family: Arial, Helvetica, sans-serif;} 
