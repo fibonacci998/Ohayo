@@ -19,7 +19,7 @@
 <script src="./js/mywords.js"></script>
 </head>
 <body>
-<!-- header -->
+
   <div class="header">
       
       <div class="sign_home">
@@ -92,79 +92,29 @@
 
 
   <!--  -->
-  <!-- the contents here -->
-  <div class="main_content">
-      <h2 id="title">My words</h2>
-      <jsp:useBean id="b" class="bean.TopicBean" scope="session"/>
-      <jsp:setProperty name="b" property="*"/>
-         
-      <div class="select_container_mywords">
-          <c:if test="${empty topics}">
-          <p>Nothing to show</p>
-      </c:if>
-      <c:if test="${not empty topics}">
-      <c:forEach var="i" items="${b.topics}">
-              <c:url var="topicContent" value="#">
-                  <c:param name="topicID" value="${i.id}"/>
-                  <c:param name="topicName" value="${i.name}"/>
-              </c:url>
-       
-          <a href="${topicContent}">${i.name}</a>
-          </c:forEach>
-      </c:if>
-      </div>
-      
-      <div class="group_button_mywords">
-      <button id="button_add_mywords">Add topic</button>
-      <button id="button_delete_mywords">Delete topic</button>
-      
-      </div>
-      
-    <!-- The add topic Modal -->
-    <!-- Trigger/Open The Modal -->
+  <jsp:useBean id="w" class="bean.UserWordBean" scope="session"/>
+        <jsp:setProperty name="w" property="*"/>
+        <jsp:setProperty name="words" property="list" param="words"/>
+  <div class="main_content"> 
+            <h2 id="title_learning">Learn flashcard</h2>
+            <h2 id="table_title_learning">できる日本語</h2>
+        </div>
+        <div class="main_content_flashcard">
 
-<!-- The Modal -->
-<div id="addModal" class="modal">
+            <c:forEach var="i" items="${words}">
+                <div class="container_flashcard"> 
+                    <a> ${i.japanese}</a>
+                    <a id="right"> ${i.vietnamese}</a>
+                </div>
+            </c:forEach>
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <form action="POST">
-    <input type="text" name="topicName" placeholder="Enter topic name" style="width: 50%;margin: 5 50 5 50"></input>
-    <input type="submit" name="add" value="add"/>
-    </form>
-  </div>
+        </div>
 
-</div>
-<script>
-    // Get the modal
-var modal = document.getElementById('addModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("button_add_mywords");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-};
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-};
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-};
-</script>
-<!--end add topic modal -->
-  </div>
+        
+            <!--<a href="learning.jsp" id="button_forward_learn">Back to Learning</a>-->
+            
+        </div>
+        <a id="button_forward_learn" href="mywords.jsp"><span>Back to Topics </span></a>
     <!-- footer here -->
   <div class="footer">
     <div class="footer_resize">

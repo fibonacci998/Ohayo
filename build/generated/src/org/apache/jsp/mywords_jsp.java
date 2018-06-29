@@ -11,10 +11,29 @@ public final class mywords_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private static java.util.List<String> _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_items;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_var_value;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_param_value_name_nobody;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
+
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
   public java.util.List<String> getDependants() {
     return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _jspx_tagPool_c_forEach_var_items = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_url_var_value = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_param_value_name_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+  }
+
+  public void _jspDestroy() {
+    _jspx_tagPool_c_forEach_var_items.release();
+    _jspx_tagPool_c_url_var_value.release();
+    _jspx_tagPool_c_param_value_name_nobody.release();
+    _jspx_tagPool_c_if_test.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -41,129 +60,184 @@ public final class mywords_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n");
-      out.write("<html xmlns=\"http://www.w3.org/1999/xhtml\">\n");
-      out.write("<head>\n");
-      out.write("<title>Ohayo! | My words</title>\n");
-      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n");
-      out.write("<link href=\"./css/style.css\" rel=\"stylesheet\" type=\"text/css\" />\n");
-      out.write("<link rel=\"stylesheet\" href=\"./css/home.css\" type=\"text/css\"/>\n");
-      out.write("<script src=\"./js/home.js\"></script>\n");
-      out.write("</head>\n");
-      out.write("<body>\n");
-      out.write("<div class=\"main\">\n");
-      out.write("  <div class=\"header\">\n");
-      out.write("      \n");
-      out.write("      <div class=\"sign_home\">\n");
-      out.write("      <span onclick=\"document.getElementById('id01').style.display='block'\">Sign in</span> or <span onclick=\"document.getElementById('id02').style.display='block'\">Sign up</span>\n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"header_resize\">\n");
-      out.write("      <div class=\"menu_nav\">\n");
-      out.write("        <ul>\n");
-      out.write("          <li><a href=\"index.html\"><span>Home Page</span></a></li>\n");
-      out.write("          <li><a href=\"dictionary.html\"><span>Dictionary</span></a></li>\n");
-      out.write("          <li><a href=\"learning.html\"><span>Learning</span></a></li>\n");
-      out.write("          <li><a href=\"GameMenu.html\"><span>Mini games</span></a></li>\n");
-      out.write("          <li><a href=\"test.html\"><span>Test</span></a></li>\n");
-      out.write("          <li class=\"active\"><a href=\"mywords.html\"><span>My words</span></a></li>\n");
-      out.write("        </ul>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"logo\">\n");
-      out.write("        <h1><a href=\"index.html\">Ohayo<span>!</span></a></h1>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"clr\"></div>\n");
-      out.write("      \n");
-      out.write("    </div> \n");
-      out.write("  </div>\n");
-      out.write("    <!-- Modal -->\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("  <div id=\"id01\" class=\"modal\">\n");
-      out.write("  \n");
-      out.write("      <form class=\"modal-content animate\" action=\"/action_page.php\">\n");
-      out.write("        <div class=\"imgcontainer\">\n");
-      out.write("          <span onclick=\"document.getElementById('id01').style.display='none'\" class=\"close\" title=\"Close Modal\">&times;</span>\n");
-      out.write("          <img src=\"../images/avatar.jpg\" width=\"100px\" alt=\"Avatar\" class=\"avatar\"/>\n");
-      out.write("        </div>\n");
-      out.write("    \n");
-      out.write("        <div class=\"container\">\n");
-      out.write("          <label for=\"uname\"><b>Username</b></label>\n");
-      out.write("          <input type=\"text\" placeholder=\"Enter Username\" name=\"uname\" required>\n");
-      out.write("    \n");
-      out.write("          <label for=\"psw\"><b>Password</b></label>\n");
-      out.write("          <input type=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>\n");
-      out.write("          <label>\n");
-      out.write("            <input type=\"checkbox\" checked=\"checked\" name=\"remember\"> Remember me\n");
-      out.write("          </label>  \n");
-      out.write("          <button type=\"submit\">Login</button>\n");
-      out.write("        </div>\n");
-      out.write("      </form>\n");
-      out.write("    </div>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("    \n");
-      out.write("    <div id=\"id02\" class=\"modal\">\n");
-      out.write("  \n");
-      out.write("        <form class=\"modal-content animate\" action=\"/action_page.php\">\n");
-      out.write("          <div class=\"imgcontainer\">\n");
-      out.write("              <span onclick=\"document.getElementById('id02').style.display='none'\" class=\"close\" title=\"Close Modal\">&times;</span>\n");
-      out.write("          </div>\n");
-      out.write("          <div class=\"container\">\n");
-      out.write("            <label for=\"uname\"><b>Username</b></label>\n");
-      out.write("            <input type=\"text\" placeholder=\"Enter Username\" name=\"uname\" required>\n");
-      out.write("      \n");
-      out.write("            <label for=\"psw\"><b>Password</b></label>\n");
-      out.write("            <input type=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>\n");
-      out.write("\n");
-      out.write("            <label for=\"psw\"><b>Enter Password Again</b></label>\n");
-      out.write("            <input type=\"password\" placeholder=\"Enter Password Again\" name=\"psw\" required>\n");
-      out.write("            <button type=\"submit\">Sign up</button>\n");
-      out.write("          </div>\n");
-      out.write("        </form>\n");
-      out.write("      </div>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("  <!--  -->\n");
-      out.write("  <!-- the contents here -->\n");
-      out.write("    <div class=\"main_content\">\n");
-      out.write("      <h2 id=\"title\">My words</h2>\n");
-      out.write("      <div class=\"select_container_mywords\">\n");
-      out.write("        <a href=\"#\">1. Topic 1</a>\n");
-      out.write("        <a href=\"#\">2. Topic 2</a>\n");
-      out.write("        <a href=\"#\">3. Topic 3</a>\n");
-      out.write("        <a href=\"#\">4. Topic 4</a>\n");
-      out.write("        <a href=\"#\">5. Topic 5</a>\n");
-      out.write("        <a href=\"#\">6. Topic 6</a>\n");
-      out.write("        <a href=\"#\">7. Topic 7</a>\n");
-      out.write("        <a href=\"#\">8. Topic 8</a>\n");
-      out.write("        <a href=\"#\">9. Topic 9</a>\n");
-      out.write("        <a href=\"#\">10. Topic 10</a>\n");
-      out.write("        <a href=\"#\">11. Topic 11</a>\n");
-      out.write("      </div>\n");
-      out.write("      <div class=\"group_button_mywords\">\n");
-      out.write("      <a id=\"button_add_mywords\"  href=\"#\">Add topic</a>\n");
-      out.write("      <a id=\"button_open_mywords\" href=\"#\">Open topic</a>\n");
-      out.write("      <a id=\"button_delete_mywords\"  href=\"#\">Delete topic</a>\n");
-      out.write("      \n");
-      out.write("      </div>\n");
-      out.write("    </div>\n");
-      out.write("\n");
-      out.write("    <!-- footer here -->\n");
-      out.write("  <div class=\"footer\">\n");
-      out.write("    <div class=\"footer_resize\">\n");
-      out.write("      <p class=\"lf\">Copyright &copy; <a href=\"#\">Domain Name</a>. All Rights Reserved</p>\n");
-      out.write("          <p class=\"rf\">Design by <a target=\"_blank\" href=\"http://www.dreamtemplate.com/\">DreamTemplate</a></p>\n");
-      out.write("          <div style=\"clear:both;\"></div>\n");
-      out.write("        </div>\n");
-      out.write("      </div>\n");
-      out.write("</div>\n");
-      out.write("</body>\n");
-      out.write("</html>\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n");
+      out.write("<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n");
+      out.write("<head>\r\n");
+      out.write("<title>Ohayo! | My words</title>\r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n");
+      out.write("<link href=\"./css/style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("<link rel=\"stylesheet\" href=\"./css/home.css\" type=\"text/css\"/>\r\n");
+      out.write("<link rel=\"stylesheet\" href=\"./css/mywords.css\" type=\"text/css\"/>\r\n");
+      out.write("<script src=\"./js/home.js\"></script>\r\n");
+      out.write("<script src=\"./js/mywords.js\"></script>\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("<!-- header -->\r\n");
+      out.write("  <div class=\"header\">\r\n");
+      out.write("      \r\n");
+      out.write("      <div class=\"sign_home\">\r\n");
+      out.write("      <span onclick=\"document.getElementById('id01').style.display='block'\">Sign in</span> or <span onclick=\"document.getElementById('id02').style.display='block'\">Sign up</span>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <div class=\"header_resize\">\r\n");
+      out.write("      <div class=\"menu_nav\">\r\n");
+      out.write("        <ul>\r\n");
+      out.write("          <li><a href=\"index.jsp\"><span>Home Page</span></a></li>\r\n");
+      out.write("          <li><a href=\"book.jsp\"><span>Book</span></a></li>\r\n");
+      out.write("          <li><a href=\"learning.jsp\"><span>Learning</span></a></li>\r\n");
+      out.write("          <li><a href=\"minigames.jsp\"><span>Mini games</span></a></li>\r\n");
+      out.write("          <li><a href=\"test.jsp\"><span>Test</span></a></li>\r\n");
+      out.write("          <li class=\"active\"><a href=\"mywords.jsp\"><span>My words</span></a></li>\r\n");
+      out.write("        </ul>\r\n");
+      out.write("      </div>\r\n");
+      out.write("      <div class=\"logo\">\r\n");
+      out.write("        <h1><a href=\"index.jsp\">Ohayo<span>!</span></a></h1>\r\n");
+      out.write("      </div>\r\n");
+      out.write("      <div class=\"clr\"></div>\r\n");
+      out.write("      \r\n");
+      out.write("    </div> \r\n");
+      out.write("  </div>\r\n");
+      out.write("    <!-- Modal -->\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("  <div id=\"id01\" class=\"modal\">\r\n");
+      out.write("  \r\n");
+      out.write("      <form class=\"modal-content animate\" action=\"/action_page.php\">\r\n");
+      out.write("        <div class=\"imgcontainer\">\r\n");
+      out.write("          <span onclick=\"document.getElementById('id01').style.display='none'\" class=\"close\" title=\"Close Modal\">&times;</span>\r\n");
+      out.write("          <img src=\"../images/avatar.jpg\" width=\"100px\" alt=\"Avatar\" class=\"avatar\"/>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    \r\n");
+      out.write("        <div class=\"container\">\r\n");
+      out.write("          <label for=\"uname\"><b>Username</b></label>\r\n");
+      out.write("          <input type=\"text\" placeholder=\"Enter Username\" name=\"uname\" required>\r\n");
+      out.write("    \r\n");
+      out.write("          <label for=\"psw\"><b>Password</b></label>\r\n");
+      out.write("          <input type=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>\r\n");
+      out.write("          <label>\r\n");
+      out.write("            <input type=\"checkbox\" checked=\"checked\" name=\"remember\"> Remember me\r\n");
+      out.write("          </label>  \r\n");
+      out.write("          <button type=\"submit\">Login</button>\r\n");
+      out.write("        </div>\r\n");
+      out.write("      </form>\r\n");
+      out.write("    </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("    \r\n");
+      out.write("    <div id=\"id02\" class=\"modal\">\r\n");
+      out.write("  \r\n");
+      out.write("        <form class=\"modal-content animate\" action=\"/action_page.php\">\r\n");
+      out.write("          <div class=\"imgcontainer\">\r\n");
+      out.write("              <span onclick=\"document.getElementById('id02').style.display='none'\" class=\"close\" title=\"Close Modal\">&times;</span>\r\n");
+      out.write("          </div>\r\n");
+      out.write("          <div class=\"container\">\r\n");
+      out.write("            <label for=\"uname\"><b>Username</b></label>\r\n");
+      out.write("            <input type=\"text\" placeholder=\"Enter Username\" name=\"uname\" required>\r\n");
+      out.write("      \r\n");
+      out.write("            <label for=\"psw\"><b>Password</b></label>\r\n");
+      out.write("            <input type=\"password\" placeholder=\"Enter Password\" name=\"psw\" required>\r\n");
+      out.write("\r\n");
+      out.write("            <label for=\"psw\"><b>Enter Password Again</b></label>\r\n");
+      out.write("            <input type=\"password\" placeholder=\"Enter Password Again\" name=\"psw\" required>\r\n");
+      out.write("            <button type=\"submit\">Sign up</button>\r\n");
+      out.write("          </div>\r\n");
+      out.write("        </form>\r\n");
+      out.write("      </div>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("  <!--  -->\r\n");
+      out.write("  <!-- the contents here -->\r\n");
+      out.write("  <div class=\"main_content\">\r\n");
+      out.write("      <h2 id=\"title\">My words</h2>\r\n");
+      out.write("      ");
+      bean.TopicBean b = null;
+      synchronized (session) {
+        b = (bean.TopicBean) _jspx_page_context.getAttribute("b", PageContext.SESSION_SCOPE);
+        if (b == null){
+          b = new bean.TopicBean();
+          _jspx_page_context.setAttribute("b", b, PageContext.SESSION_SCOPE);
+        }
+      }
+      out.write("\r\n");
+      out.write("      ");
+      org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("b"), request);
+      out.write("\r\n");
+      out.write("         \r\n");
+      out.write("      <div class=\"select_container_mywords\">\r\n");
+      out.write("          ");
+      if (_jspx_meth_c_if_0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("      ");
+      if (_jspx_meth_c_if_1(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("      </div>\r\n");
+      out.write("      \r\n");
+      out.write("      <div class=\"group_button_mywords\">\r\n");
+      out.write("      <button id=\"button_add_mywords\">Add topic</button>\r\n");
+      out.write("      <a id=\"button_open_mywords\" href=\"#\">Open topic</a>\r\n");
+      out.write("      <a id=\"button_delete_mywords\"  href=\"#\">Delete topic</a>\r\n");
+      out.write("      \r\n");
+      out.write("      </div>\r\n");
+      out.write("      \r\n");
+      out.write("    <!-- The add topic Modal -->\r\n");
+      out.write("    <!-- Trigger/Open The Modal -->\r\n");
+      out.write("\r\n");
+      out.write("<!-- The Modal -->\r\n");
+      out.write("<div id=\"addModal\" class=\"modal\">\r\n");
+      out.write("\r\n");
+      out.write("  <!-- Modal content -->\r\n");
+      out.write("  <div class=\"modal-content\">\r\n");
+      out.write("    <span class=\"close\">&times;</span>\r\n");
+      out.write("    <input type=\"text\" name=\"topicName\" placeholder=\"Enter topic name\"></input>\r\n");
+      out.write("  </div>\r\n");
+      out.write("\r\n");
+      out.write("</div>\r\n");
+      out.write("<script>\r\n");
+      out.write("    // Get the modal\r\n");
+      out.write("var modal = document.getElementById('addModal');\r\n");
+      out.write("\r\n");
+      out.write("// Get the button that opens the modal\r\n");
+      out.write("var btn = document.getElementById(\"button_add_mywords\");\r\n");
+      out.write("\r\n");
+      out.write("// Get the <span> element that closes the modal\r\n");
+      out.write("var span = document.getElementsByClassName(\"close\")[0];\r\n");
+      out.write("\r\n");
+      out.write("// When the user clicks the button, open the modal \r\n");
+      out.write("btn.onclick = function() {\r\n");
+      out.write("    modal.style.display = \"block\";\r\n");
+      out.write("};\r\n");
+      out.write("\r\n");
+      out.write("// When the user clicks on <span> (x), close the modal\r\n");
+      out.write("span.onclick = function() {\r\n");
+      out.write("    modal.style.display = \"none\";\r\n");
+      out.write("};\r\n");
+      out.write("\r\n");
+      out.write("// When the user clicks anywhere outside of the modal, close it\r\n");
+      out.write("window.onclick = function(event) {\r\n");
+      out.write("    if (event.target === modal) {\r\n");
+      out.write("        modal.style.display = \"none\";\r\n");
+      out.write("    }\r\n");
+      out.write("};\r\n");
+      out.write("</script>\r\n");
+      out.write("<!--end add topic modal -->\r\n");
+      out.write("\r\n");
+      out.write("    <!-- footer here -->\r\n");
+      out.write("  <div class=\"footer\">\r\n");
+      out.write("    <div class=\"footer_resize\">\r\n");
+      out.write("      <p class=\"lf\">Copyright &copy; <a href=\"#\">Domain Name</a>. All Rights Reserved</p>\r\n");
+      out.write("          <p class=\"rf\">Design by <a target=\"_blank\" href=\"http://www.dreamtemplate.com/\">DreamTemplate</a></p>\r\n");
+      out.write("          <div style=\"clear:both;\"></div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("      </div>\r\n");
+      out.write("  </div>\r\n");
+      out.write("</body>\r\n");
+      out.write("</html>\r\n");
       out.write("    ");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -176,5 +250,194 @@ public final class mywords_jsp extends org.apache.jasper.runtime.HttpJspBase
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_c_if_0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent(null);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${empty b.topics}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("          <p>Nothing to show</p>\r\n");
+        out.write("      ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_1.setParent(null);
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${not empty topics}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+    if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("      ");
+        if (_jspx_meth_c_forEach_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_if_1, _jspx_page_context))
+          return true;
+        out.write("\r\n");
+        out.write("      ");
+        int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_forEach_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_if_1, PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_forEach_0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _jspx_tagPool_c_forEach_var_items.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_forEach_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_forEach_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_if_1);
+    _jspx_th_c_forEach_0.setVar("i");
+    _jspx_th_c_forEach_0.setItems((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${b.topics}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    int[] _jspx_push_body_count_c_forEach_0 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_forEach_0 = _jspx_th_c_forEach_0.doStartTag();
+      if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("              ");
+          if (_jspx_meth_c_url_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+            return true;
+          out.write("\r\n");
+          out.write("       \r\n");
+          out.write("          <a href=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${topicContent}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write('"');
+          out.write('>');
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("</a>\r\n");
+          out.write("          ");
+          int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_forEach_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_forEach_0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_forEach_0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_forEach_0.doFinally();
+      _jspx_tagPool_c_forEach_var_items.reuse(_jspx_th_c_forEach_0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_url_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_url_0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _jspx_tagPool_c_url_var_value.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_url_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_url_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
+    _jspx_th_c_url_0.setVar("topicContent");
+    _jspx_th_c_url_0.setValue("#");
+    int _jspx_eval_c_url_0 = _jspx_th_c_url_0.doStartTag();
+    if (_jspx_eval_c_url_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      if (_jspx_eval_c_url_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.pushBody();
+        _jspx_push_body_count_c_forEach_0[0]++;
+        _jspx_th_c_url_0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+        _jspx_th_c_url_0.doInitBody();
+      }
+      do {
+        out.write("\r\n");
+        out.write("                  ");
+        if (_jspx_meth_c_param_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_url_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+          return true;
+        out.write("\r\n");
+        out.write("                  ");
+        if (_jspx_meth_c_param_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_url_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
+          return true;
+        out.write("\r\n");
+        out.write("              ");
+        int evalDoAfterBody = _jspx_th_c_url_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+      if (_jspx_eval_c_url_0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE)
+        out = _jspx_page_context.popBody();
+        _jspx_push_body_count_c_forEach_0[0]--;
+    }
+    if (_jspx_th_c_url_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_url_var_value.reuse(_jspx_th_c_url_0);
+      return true;
+    }
+    _jspx_tagPool_c_url_var_value.reuse(_jspx_th_c_url_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_param_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_url_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:param
+    org.apache.taglibs.standard.tag.rt.core.ParamTag _jspx_th_c_param_0 = (org.apache.taglibs.standard.tag.rt.core.ParamTag) _jspx_tagPool_c_param_value_name_nobody.get(org.apache.taglibs.standard.tag.rt.core.ParamTag.class);
+    _jspx_th_c_param_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_param_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_url_0);
+    _jspx_th_c_param_0.setName("topicID");
+    _jspx_th_c_param_0.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_param_0 = _jspx_th_c_param_0.doStartTag();
+    if (_jspx_th_c_param_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_param_value_name_nobody.reuse(_jspx_th_c_param_0);
+      return true;
+    }
+    _jspx_tagPool_c_param_value_name_nobody.reuse(_jspx_th_c_param_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_param_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_url_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:param
+    org.apache.taglibs.standard.tag.rt.core.ParamTag _jspx_th_c_param_1 = (org.apache.taglibs.standard.tag.rt.core.ParamTag) _jspx_tagPool_c_param_value_name_nobody.get(org.apache.taglibs.standard.tag.rt.core.ParamTag.class);
+    _jspx_th_c_param_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_param_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_url_0);
+    _jspx_th_c_param_1.setName("topicName");
+    _jspx_th_c_param_1.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+    int _jspx_eval_c_param_1 = _jspx_th_c_param_1.doStartTag();
+    if (_jspx_th_c_param_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_param_value_name_nobody.reuse(_jspx_th_c_param_1);
+      return true;
+    }
+    _jspx_tagPool_c_param_value_name_nobody.reuse(_jspx_th_c_param_1);
+    return false;
   }
 }

@@ -82,8 +82,6 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>Ohayo | Learning</title>\r\n");
       out.write("        <link href=\"./css/style.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("        <link href=\"./css/learningStyle.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"./css/home.css\" type=\"text/css\"/>\r\n");
-      out.write("<script src=\"./js/home.js\"></script>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("\r\n");

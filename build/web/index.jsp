@@ -15,7 +15,6 @@
 <script src="./js/home.js"></script>
 </head>
 <body>
-<div class="main">^
   <div class="header">
 
     <div class="sign_home">
@@ -136,7 +135,7 @@
           <div style="clear:both;"></div>
         </div>
       </div>
-</div>
+
       
 </body>
 </html>

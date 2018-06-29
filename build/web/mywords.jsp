@@ -14,10 +14,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="./css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="./css/home.css" type="text/css"/>
+<link rel="stylesheet" href="./css/mywords.css" type="text/css"/>
 <script src="./js/home.js"></script>
+<script src="./js/mywords.js"></script>
 </head>
 <body>
-<div class="main">
+<!-- header -->
   <div class="header">
       
       <div class="sign_home">
@@ -91,29 +93,78 @@
 
   <!--  -->
   <!-- the contents here -->
-    <div class="main_content">
+  <div class="main_content">
       <h2 id="title">My words</h2>
+      <jsp:useBean id="b" class="bean.TopicBean" scope="session"/>
+      <jsp:setProperty name="b" property="*"/>
+         
       <div class="select_container_mywords">
-        <a href="#">1. Topic 1</a>
-        <a href="#">2. Topic 2</a>
-        <a href="#">3. Topic 3</a>
-        <a href="#">4. Topic 4</a>
-        <a href="#">5. Topic 5</a>
-        <a href="#">6. Topic 6</a>
-        <a href="#">7. Topic 7</a>
-        <a href="#">8. Topic 8</a>
-        <a href="#">9. Topic 9</a>
-        <a href="#">10. Topic 10</a>
-        <a href="#">11. Topic 11</a>
+          <c:if test="${empty topics}">
+          <p>Nothing to show</p>
+      </c:if>
+      <c:if test="${not empty topics}">
+      <c:forEach var="i" items="${b.topics}">
+              <c:url var="topicContent" value="#">
+                  <c:param name="topicID" value="${i.id}"/>
+                  <c:param name="topicName" value="${i.name}"/>
+              </c:url>
+       
+          <a href="${topicContent}">${i.name}</a>
+          </c:forEach>
+      </c:if>
       </div>
+      
       <div class="group_button_mywords">
-      <a id="button_add_mywords"  href="#">Add topic</a>
-      <a id="button_open_mywords" href="#">Open topic</a>
-      <a id="button_delete_mywords"  href="#">Delete topic</a>
+      <button id="button_add_mywords">Add topic</button>
+      <button id="button_delete_mywords">Delete topic</button>
       
       </div>
-    </div>
+      
+    <!-- The add topic Modal -->
+    <!-- Trigger/Open The Modal -->
 
+<!-- The Modal -->
+<div id="addModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form action="POST">
+    <input type="text" name="topicName" placeholder="Enter topic name" style="width: 50%;margin: 5 50 5 50"></input>
+    <input type="submit" name="add" value="add"/>
+    </form>
+  </div>
+
+</div>
+<script>
+    // Get the modal
+var modal = document.getElementById('addModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("button_add_mywords");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
+</script>
+<!--end add topic modal -->
+  </div>
     <!-- footer here -->
   <div class="footer">
     <div class="footer_resize">
@@ -122,7 +173,7 @@
           <div style="clear:both;"></div>
         </div>
       </div>
-</div>
+  </div>
 </body>
 </html>
     
