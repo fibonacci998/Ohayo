@@ -1,4 +1,3 @@
-
 <%-- 
     Document   : learning
     Created on : May 28, 2018, 9:21:11 AM
@@ -40,13 +39,18 @@
         <div class="pagination">
             <c:forEach begin="1" end="${w.pages}" step="1" var="i">
                 <c:url var="next" value="flashcard.jsp">
-                    <c:param name="page">${i}</c:param>
+                    <c:param name="page" value="${i}">${i}</c:param>
                 </c:url>
+                <c:if test="${i == param.page}">
+                    <a href="${next}" class="active">${i}</a>
+                </c:if>
 
-                <a href="${next}">${i}</a>
+                <c:if test="${i != param.page}">
+                    <a href="${next}">${i}</a>
+                </c:if>
             </c:forEach>
             <!--<a href="learning.jsp" id="button_forward_learn">Back to Learning</a>-->
-            
+
         </div>
         <a id="button_forward_learn" href="learning.jsp"><span>Back to Learning </span></a>
         <%@include file="footer.jsp" %>
