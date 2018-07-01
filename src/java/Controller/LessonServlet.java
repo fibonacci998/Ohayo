@@ -6,9 +6,8 @@
 package Controller;
 
 import entity.Dictionary;
+import entity.RecentLesson;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.DictionaryDAO;
+import model.RecentLessonDAO;
 
 /**
  *
@@ -35,14 +35,16 @@ public class LessonServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         try {
-            /* TODO output your page here. You may use following sample code. */
+           
             String id = request.getParameter("lessonID");
-            DictionaryDAO dao = new DictionaryDAO();
-            List<Dictionary> d = dao.selectDictionary(id);
-//            System.out.println(d.toString());
+            System.out.println("lessonID = " + id);
+            RecentLesson recentLesson = new RecentLesson(1, id);
+            RecentLessonDAO dao = new RecentLessonDAO();
+            dao.insert(recentLesson);
             RequestDispatcher rd = request.getRequestDispatcher("flashcard.jsp");
-            request.setAttribute("dictionary", d);
             rd.forward(request, response);
             
         }catch(Exception e){
