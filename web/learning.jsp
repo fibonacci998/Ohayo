@@ -21,6 +21,7 @@
         <div class="main_content">
             <jsp:useBean id="b" class="bean.LessonBean" scope="session"/>
             <jsp:setProperty name="b" property="*"/>
+            <%--<jsp:setProperty name="b" property="page" value="1"/>--%>
 
             <div class="main_content"> 
                 <h2 id="title_learning">Learning</h2>
@@ -28,7 +29,7 @@
                 <h3 id="title_choose_lesson"> Choose one lesson</h3>
 
                 <c:forEach var="i" items="${b.lessons}">
-                    <c:url var="lessonContent" value="LessonServlet">
+                    <c:url var="lessonContent" value="flashcard.jsp">
                         <c:param name="lessonID" value="${i.id}"/>
                         <c:param name="lessonName" value="${i.name}"/>
                     </c:url>
