@@ -4,7 +4,9 @@
     Author     : Laptop VINHLINK
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -15,10 +17,14 @@
 <script src="./js/home.js"></script>
 </head>
 <body>
+    <jsp:useBean id="ib" class="bean.RecentActivitiesBean" scope="session"/>
+    <jsp:setProperty name="ib" property="*"/>
+<div class="main">
   <div class="header">
 
     <div class="sign_home">
-      <span onclick="document.getElementById('id01').style.display='block'">Sign in</span> or <span onclick="document.getElementById('id02').style.display='block'">Sign up</span>
+      <span onclick="document.getElementById('id01').style.display='block'">Sign in</span> 
+      or <span onclick="document.getElementById('id02').style.display='block'">Sign up</span>
     </div>
 
     <div class="header_resize">
@@ -50,7 +56,7 @@
       <form class="modal-content animate" action="/action_page.php">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <img src="../images/avatar.jpg" width="100px" alt="Avatar" class="avatar"/>
+          <img src="./images/avatar.jpg" width="100px" alt="Avatar" class="avatar"/>
         </div>
     
         <div class="container">
@@ -77,13 +83,13 @@
           </div>
           <div class="container">
             <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <input type="text" placeholder="Enter Username" name="uname" required/>
       
             <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
+            <input type="password" placeholder="Enter Password" name="psw" required/>
 
             <label for="psw"><b>Enter Password Again</b></label>
-            <input type="password" placeholder="Enter Password Again" name="psw" required>
+            <input type="password" placeholder="Enter Password Again" name="psw" required/>
             <button type="submit">Sign up</button>
           </div>
         </form>
@@ -99,29 +105,26 @@
       <tr>
         <td>
           <h2 id="table_title_home">My recent added words</h2>
-          <div class="container_words">
-            <p>Word 1 = meaning 1</p>
-            <p>Word 2 = meaning 2</p>
-            <p>word 3 = meaning 3</p>
-            <p>word 4 = meaning 4</p>
-            <p>word 5 = meaning 5</p>
-            <p>word 6 = meaning 6</p>
-            <p>word 7 = meaning 7</p>
-          </div>
-          <a id="button_home" href="#">Go to My Words</a>
+          
+              <div class="container_words">
+
+                  <c:forEach var="i" items="${ib.recentWords}">
+                <p>${i.japanese}  =  ${i.vietnamese}</p>
+                </c:forEach>
+
+             </div>
+          
+          
+          <a id="button_home" href="mywords.jsp">Go to My Words</a>
         </td>
         <td>
           <h2 id="table_title_home">My recent lessons</h2>
           <div class="container_words">
-            <a href="#">Lesson 1 </a>
-            <a href="#">Lesson 2 </a>
-            <a href="#">Lesson 3 </a>
-            <a href="#">Lesson 4 </a>
-            <a href="#">Lesson 5 </a>
-            <a href="#">Lesson 6 </a>
-            <a href="#">Lesson 7 </a>
+              <c:forEach var="i" items="${ib.recentLessons}">
+                <p>Lesson ${i.lessonId}:  ${i.lessonName}</p>
+             </c:forEach>
           </div>
-          <a href="#" id="button_home">See all lessons</a>
+          <a href="learning.jsp" id="button_home">See all lessons</a>
         </td>
       </tr>
     </table>
@@ -135,7 +138,7 @@
           <div style="clear:both;"></div>
         </div>
       </div>
-  
+</div>
       
 </body>
 </html>
