@@ -7,10 +7,15 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.TopicDAO;
 
 /**
  *
@@ -32,15 +37,19 @@ public class MyWordsServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet MyWordsServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet MyWordsServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String name = request.getParameter("topicName");
+            System.out.println(name);
+            TopicDAO dao = new TopicDAO();
+            try {
+                dao.insert(name);
+                System.out.println("Successful");
+                RequestDispatcher rd = request.getRequestDispatcher("mywords.jsp");
+                
+                rd.forward(request, response);
+            } catch (IOException | SQLException | ServletException e) {
+                System.out.println(e);
+            }
+            
         }
     }
 

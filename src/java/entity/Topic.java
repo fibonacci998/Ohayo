@@ -10,19 +10,19 @@ package entity;
  * @author Wasd
  */
 public class Topic {
-    private String topicID;
+    private int topicID;
     private String topicName;
 
-    public Topic(String topicID, String topicName) {
+    public Topic(int topicID, String topicName) {
         this.topicID = topicID;
         this.topicName = topicName;
     }
 
-    public String getTopicID() {
+    public int getTopicID() {
         return topicID;
     }
 
-    public void setTopicID(String topicID) {
+    public void setTopicID(int topicID) {
         this.topicID = topicID;
     }
 
@@ -34,5 +34,6 @@ public class Topic {
         this.topicName = topicName;
     }
 
+    
     
 }

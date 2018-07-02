@@ -4,6 +4,7 @@ package DBConnect;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -84,6 +85,16 @@ public class ConnectDB {
         }
         return cs;
     }
-
+    
+    public PreparedStatement insertTopic(String insert,String name){
+        PreparedStatement ps = null;
+        try {
+            ps = conn.prepareStatement(insert);
+            ps.setString(0, name);
+        } catch (SQLException ex) {
+            Logger.getLogger(ConnectDB.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ps;
+    }
    
 }

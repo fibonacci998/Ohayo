@@ -21,7 +21,8 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_url_var_value;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_param_value_name_nobody;
   private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_forEach_var_step_end_begin;
-  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_param_name;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_if_test;
+  private org.apache.jasper.runtime.TagHandlerPool _jspx_tagPool_c_param_value_name;
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -34,7 +35,8 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_c_url_var_value = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_param_value_name_nobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _jspx_tagPool_c_forEach_var_step_end_begin = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _jspx_tagPool_c_param_name = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_if_test = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _jspx_tagPool_c_param_value_name = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
   }
 
   public void _jspDestroy() {
@@ -42,7 +44,8 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
     _jspx_tagPool_c_url_var_value.release();
     _jspx_tagPool_c_param_value_name_nobody.release();
     _jspx_tagPool_c_forEach_var_step_end_begin.release();
-    _jspx_tagPool_c_param_name.release();
+    _jspx_tagPool_c_if_test.release();
+    _jspx_tagPool_c_param_value_name.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -164,7 +167,7 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <!--  -->");
       out.write(" \r\n");
       out.write("        <div class=\"main_content\">\r\n");
-      out.write("        ");
+      out.write("            ");
       bean.LessonBean b = null;
       synchronized (session) {
         b = (bean.LessonBean) _jspx_page_context.getAttribute("b", PageContext.SESSION_SCOPE);
@@ -174,30 +177,35 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
       }
       out.write("\r\n");
-      out.write("        ");
+      out.write("            ");
       org.apache.jasper.runtime.JspRuntimeLibrary.introspect(_jspx_page_context.findAttribute("b"), request);
       out.write("\r\n");
-      out.write("        <div class=\"main_content\"> \r\n");
-      out.write("            <h2 id=\"title_learning\">Learning</h2>\r\n");
-      out.write("            <h2 id=\"table_title_learning\">できる日本語</h2>\r\n");
-      out.write("            <h3 id=\"title_choose_lesson\"> Choose one lesson</h3>\r\n");
-      out.write("\r\n");
       out.write("            ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("            <div class=\"main_content\"> \r\n");
+      out.write("                <h2 id=\"title_learning\">Learning</h2>\r\n");
+      out.write("                <h2 id=\"table_title_learning\">できる日本語</h2>\r\n");
+      out.write("                <h3 id=\"title_choose_lesson\"> Choose one lesson</h3>\r\n");
+      out.write("\r\n");
+      out.write("                ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
         return;
       out.write("\r\n");
       out.write("\r\n");
-      out.write("        </div>\r\n");
+      out.write("            </div>\r\n");
       out.write("\r\n");
-      out.write("        <div class=\"pagination\">\r\n");
-      out.write("            ");
+      out.write("            <div class=\"pagination\">\r\n");
+      out.write("                \r\n");
+      out.write("\r\n");
+      out.write("                ");
       if (_jspx_meth_c_forEach_1(_jspx_page_context))
         return;
       out.write("\r\n");
-      out.write("                \r\n");
-      out.write("            <table>\r\n");
-      out.write("            </table>\r\n");
-      out.write("        </div>\r\n");
+      out.write("\r\n");
+      out.write("                <table>\r\n");
+      out.write("                </table>\r\n");
+      out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("        ");
       out.write("\n");
@@ -214,7 +222,6 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
-      out.write("\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -244,12 +251,12 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                ");
+          out.write("                    ");
           if (_jspx_meth_c_url_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write("\r\n");
-          out.write("                <div class=\"container_lessons\"> \r\n");
-          out.write("                    <a href=\"");
+          out.write("                    <div class=\"container_lessons\"> \r\n");
+          out.write("                        <a href=\"");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${lessonContent}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("\">Lesson ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -257,8 +264,8 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write(' ');
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i.name}", java.lang.String.class, (PageContext)_jspx_page_context, null));
           out.write("</a>\r\n");
-          out.write("                </div>\r\n");
-          out.write("            ");
+          out.write("                    </div>\r\n");
+          out.write("                ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -298,15 +305,15 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
       do {
         out.write("\r\n");
-        out.write("                    ");
+        out.write("                        ");
         if (_jspx_meth_c_param_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_url_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
           return true;
         out.write("\r\n");
-        out.write("                    ");
+        out.write("                        ");
         if (_jspx_meth_c_param_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_url_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
           return true;
         out.write("\r\n");
-        out.write("                ");
+        out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_url_0.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -379,18 +386,23 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_forEach_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\r\n");
-          out.write("                ");
+          out.write("                    ");
           if (_jspx_meth_c_url_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
             return true;
           out.write("\r\n");
-          out.write("                \r\n");
-          out.write("                <a href=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${next}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write('"');
-          out.write('>');
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-          out.write("</a>\r\n");
-          out.write("            ");
+          out.write("\r\n");
+          out.write("\r\n");
+          out.write("                    ");
+          if (_jspx_meth_c_if_0((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
+            return true;
+          out.write("\r\n");
+          out.write("\r\n");
+          out.write("                    ");
+          if (_jspx_meth_c_if_1((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
+            return true;
+          out.write("\r\n");
+          out.write("\r\n");
+          out.write("                ");
           int evalDoAfterBody = _jspx_th_c_forEach_1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -430,11 +442,11 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
       }
       do {
         out.write("\r\n");
-        out.write("                    ");
+        out.write("                        ");
         if (_jspx_meth_c_param_2((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_url_1, _jspx_page_context, _jspx_push_body_count_c_forEach_1))
           return true;
         out.write("\r\n");
-        out.write("                ");
+        out.write("                    ");
         int evalDoAfterBody = _jspx_th_c_url_1.doAfterBody();
         if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
           break;
@@ -456,10 +468,11 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:param
-    org.apache.taglibs.standard.tag.rt.core.ParamTag _jspx_th_c_param_2 = (org.apache.taglibs.standard.tag.rt.core.ParamTag) _jspx_tagPool_c_param_name.get(org.apache.taglibs.standard.tag.rt.core.ParamTag.class);
+    org.apache.taglibs.standard.tag.rt.core.ParamTag _jspx_th_c_param_2 = (org.apache.taglibs.standard.tag.rt.core.ParamTag) _jspx_tagPool_c_param_value_name.get(org.apache.taglibs.standard.tag.rt.core.ParamTag.class);
     _jspx_th_c_param_2.setPageContext(_jspx_page_context);
     _jspx_th_c_param_2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_url_1);
     _jspx_th_c_param_2.setName("page");
+    _jspx_th_c_param_2.setValue((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i}", java.lang.String.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_param_2 = _jspx_th_c_param_2.doStartTag();
     if (_jspx_eval_c_param_2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
       if (_jspx_eval_c_param_2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
@@ -479,10 +492,75 @@ public final class learning_jsp extends org.apache.jasper.runtime.HttpJspBase
         _jspx_push_body_count_c_forEach_1[0]--;
     }
     if (_jspx_th_c_param_2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_param_name.reuse(_jspx_th_c_param_2);
+      _jspx_tagPool_c_param_value_name.reuse(_jspx_th_c_param_2);
       return true;
     }
-    _jspx_tagPool_c_param_name.reuse(_jspx_th_c_param_2);
+    _jspx_tagPool_c_param_value_name.reuse(_jspx_th_c_param_2);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_0(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_1)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_0 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_0.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_1);
+    _jspx_th_c_if_0.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i == param.page}", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_0 = _jspx_th_c_if_0.doStartTag();
+    if (_jspx_eval_c_if_0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                        <a href=\"");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${next}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("\" class=\"active\">");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("</a>\r\n");
+        out.write("                    ");
+        int evalDoAfterBody = _jspx_th_c_if_0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_0);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_if_1(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_1, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_1)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:if
+    org.apache.taglibs.standard.tag.rt.core.IfTag _jspx_th_c_if_1 = (org.apache.taglibs.standard.tag.rt.core.IfTag) _jspx_tagPool_c_if_test.get(org.apache.taglibs.standard.tag.rt.core.IfTag.class);
+    _jspx_th_c_if_1.setPageContext(_jspx_page_context);
+    _jspx_th_c_if_1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_1);
+    _jspx_th_c_if_1.setTest(((java.lang.Boolean) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i != param.page }", java.lang.Boolean.class, (PageContext)_jspx_page_context, null)).booleanValue());
+    int _jspx_eval_c_if_1 = _jspx_th_c_if_1.doStartTag();
+    if (_jspx_eval_c_if_1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      do {
+        out.write("\r\n");
+        out.write("                        <a href=\"");
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${next}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write('"');
+        out.write('>');
+        out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${i}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+        out.write("</a>\r\n");
+        out.write("                    ");
+        int evalDoAfterBody = _jspx_th_c_if_1.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+    }
+    if (_jspx_th_c_if_1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
+      return true;
+    }
+    _jspx_tagPool_c_if_test.reuse(_jspx_th_c_if_1);
     return false;
   }
 }

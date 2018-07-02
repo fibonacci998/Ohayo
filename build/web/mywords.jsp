@@ -15,8 +15,8 @@
 <link href="./css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="./css/home.css" type="text/css"/>
 <link rel="stylesheet" href="./css/mywords.css" type="text/css"/>
-<script src="./js/home.js"></script>
-<script src="./js/mywords.js"></script>
+<script type="text/javascript" src="./js/home.js"></script>
+<script type="text/javascript" src="./js/mywords.js"></script>
 </head>
 <body>
 <!-- header -->
@@ -95,25 +95,22 @@
   <!-- the contents here -->
   <div class="main_content">
       <h2 id="title">My words</h2>
-      <jsp:useBean id="b" class="bean.TopicBean" scope="session"/>
-      <jsp:setProperty name="b" property="*"/>
-         
+      <jsp:useBean id="t" class="bean.TopicBean" scope="session"/>
+      <jsp:setProperty name="t" property="*"/>
+         <!-- show list topics-->
       <div class="select_container_mywords">
-          <c:if test="${empty topics}">
-          <p>Nothing to show</p>
-      </c:if>
-      <c:if test="${not empty topics}">
-      <c:forEach var="i" items="${b.topics}">
-              <c:url var="topicContent" value="#">
-                  <c:param name="topicID" value="${i.id}"/>
-                  <c:param name="topicName" value="${i.name}"/>
+
+      <c:forEach var="i" items="${t.topics}">
+              <c:url var="topicContent" value="topic_words.jsp">
+                  <c:param name="topicID" value="${i.topicID}"/>
+                  <c:param name="topicName" value="${i.topicName}"/>
               </c:url>
        
-          <a href="${topicContent}">${i.name}</a>
+          <a href="${topicContent}">${i.topicName}</a>
           </c:forEach>
-      </c:if>
       </div>
-      
+      <!--end show list topics-->
+      <!-- group button -->
       <div class="group_button_mywords">
       <button id="button_add_mywords">Add topic</button>
       <button id="button_delete_mywords">Delete topic</button>
@@ -129,38 +126,75 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
+    <form action="MyWordsServlet" method="POST">
+    <input type="text" name="topicName" placeholder="Enter topic name" style="width: 50%;margin: 5px"></input>
+    <input id ="button_add_topic" type="submit" name="add" value="add" style="padding: 10px; margin: 5px"/>
+    </form>
+  </div>
+
+</div>
+
+<div id="deleteModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
     <form action="POST">
-    <input type="text" name="topicName" placeholder="Enter topic name" style="width: 50%;margin: 5 50 5 50"></input>
-    <input type="submit" name="add" value="add"/>
+    <!-- modal delete content-->
+    <c:if test="${empty topics}">
+          <p>Nothing to show</p>
+      </c:if>
+      <c:if test="${not empty topics}">
+      <c:forEach var="i" items="${t.topics}">
+              <c:url var="topicContent" value="#">
+                  <c:param name="topicID" value="${i.topicID}"/>
+                  <c:param name="topicName" value="${i.topicName}"/>
+              </c:url>
+       
+          <a href="${topicContent}">${i.topicName}</a>
+          </c:forEach>
+      </c:if>
+          <br/>
+          <input id="button_delete_topic" type="submit" name="delete" value="delete selected" style="margin: 5px 300px;padding:10px;"/>
     </form>
   </div>
 
 </div>
 <script>
     // Get the modal
-var modal = document.getElementById('addModal');
-
+var addModal = document.getElementById('addModal');
+var deleteModal = document.getElementById('deleteModal');
 // Get the button that opens the modal
-var btn = document.getElementById("button_add_mywords");
-
+var btnAdd = document.getElementById("button_add_mywords");
+var btnDel = document.getElementById("button_delete_mywords");
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
+btnAdd.onclick = function() {
+    addModal.style.display = "block";
 };
-
+btnDel.onclick = function() {
+    deleteModal.style.display = "block";
+};
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    modal.style.display = "none";
+    addModal.style.display = "none";
 };
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
+    if (event.target === addModal) {
+        addModal.style.display = "none";
     }
+    if (event.target === deleteModal) {
+        deleteModal.style.display = "none";
+};
+
+
+// Get the button that opens the modal
+
+
 };
 </script>
 <!--end add topic modal -->
