@@ -17,6 +17,7 @@
     </head>
     <body>
 
+        
         <%@include file="header.jsp" %> 
         <div class="main_content">
             <jsp:useBean id="b" class="bean.LessonBean" scope="session"/>

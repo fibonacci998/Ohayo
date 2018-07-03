@@ -15,6 +15,7 @@
 <link href="./css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="./css/home.css" type="text/css"/>
 <link rel="stylesheet" href="./css/mywords.css" type="text/css"/>
+<link rel="stylesheet" href="./css/flashcard.css" type="text/css"/>
 <script src="./js/home.js"></script>
 <script src="./js/mywords.js"></script>
 </head>
@@ -41,7 +42,7 @@
       </div>
       <div class="clr"></div>
       
-    </div> 
+    </div>  
   </div>
     <!-- Modal -->
 
@@ -92,29 +93,52 @@
 
 
   <!--  -->
-  <jsp:useBean id="w" class="bean.UserWordBean" scope="session"/>
-        <jsp:setProperty name="w" property="*"/>
-        <jsp:setProperty name="words" property="list" param="words"/>
-  <div class="main_content"> 
+  <div class="main_content">
+      <jsp:useBean id="u" class="bean.UserWordBean" scope="session"/>
+        <jsp:setProperty name="u" property="*"/>
+        <jsp:setProperty name="topicID" property="*"/>
+        <
+        <div class="main_content"> 
             <h2 id="title_learning">Learn flashcard</h2>
             <h2 id="table_title_learning">できる日本語</h2>
         </div>
         <div class="main_content_flashcard">
-
-            <c:forEach var="i" items="${words}">
+            <c:if test="${empty words}">
+                <div class="container_flashcard"> 
+                    <p>Nothing to show</p>
+                </div>
+            </c:if>
+            <c:otherwise>
+            <c:forEach var="i" items="${u.words}">
                 <div class="container_flashcard"> 
                     <a> ${i.japanese}</a>
                     <a id="right"> ${i.vietnamese}</a>
                 </div>
             </c:forEach>
-
+            </c:otherwise>
         </div>
 
-        
+        <div class="pagination">
+            <c:forEach begin="1" end="${u.pages}" step="1" var="i">
+                <c:url var="next" value="topic_words.jsp">
+                    <c:param name="page" value="${i}">${i}</c:param>
+                </c:url>
+                <c:if test="${i == param.page}">
+                    <a href="${next}" class="active">${i}</a>
+                </c:if>
+
+                <c:if test="${i != param.page}">
+                    <a href="${next}">${i}</a>
+                </c:if>
+            </c:forEach>
             <!--<a href="learning.jsp" id="button_forward_learn">Back to Learning</a>-->
-            
+
         </div>
-        <a id="button_forward_learn" href="mywords.jsp"><span>Back to Topics </span></a>
+        <a id="button_forward_learn" href="learning.jsp"><span>Back to Learning </span></a> 
+  </div>
+        
+            
+        
     <!-- footer here -->
   <div class="footer">
     <div class="footer_resize">

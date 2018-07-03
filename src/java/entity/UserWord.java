@@ -10,41 +10,41 @@ package entity;
  * @author Wasd
  */
 public class UserWord {
-    private String wordID;
-    private String userID;
-    private String topicID;
+    private int wordID;
+    private int userID;
+    private int topicID;
     private String japanese;
     private String vietnamese;
 
-    public UserWord(String wordID, String userID,  String japanese, String vietnamese,String topicID) {
+    public UserWord(int wordID, int userID, int topicID, String japanese, String vietnamese) {
         this.wordID = wordID;
         this.userID = userID;
+        this.topicID = topicID;
         this.japanese = japanese;
         this.vietnamese = vietnamese;
-        this.topicID = topicID;
     }
 
-    public String getWordID() {
+    public int getWordID() {
         return wordID;
     }
 
-    public void setWordID(String wordID) {
+    public void setWordID(int wordID) {
         this.wordID = wordID;
     }
 
-    public String getUserID() {
+    public int getUserID() {
         return userID;
     }
 
-    public void setUserID(String userID) {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
-    public String getTopicID() {
+    public int getTopicID() {
         return topicID;
     }
 
-    public void setTopicID(String topicID) {
+    public void setTopicID(int topicID) {
         this.topicID = topicID;
     }
 
@@ -63,6 +63,7 @@ public class UserWord {
     public void setVietnamese(String vietnamese) {
         this.vietnamese = vietnamese;
     }
-    
+
+   
     
 }

@@ -19,7 +19,17 @@ import java.util.List;
 public class UserWordBean {
     private int page;
     private int pageSize;
-    List<UserWord> list = new ArrayList<>();;
+    private int topicID;
+
+    public int getTopicID() {
+        return topicID;
+    }
+
+    public void setTopicID(int topicID) {
+        this.topicID = topicID;
+    }
+    
+    private List<UserWord> list = new ArrayList<>();;
    
     public int getPage() {
         return page;
@@ -61,16 +71,16 @@ public class UserWordBean {
         return p;
     }
     
-    public List<UserWord> getWords(String topicID) throws Exception {
+    public List<UserWord> getWords() throws Exception {
         ConnectDB conn = new ConnectDB();
         ResultSet rs = conn.getData("select * "
                 + "from User_Word where TopicID = "+topicID);
         while (rs.next()) {   
-            String wordID = rs.getString(1);
-            String userID = rs.getString(2);
+            int wordID = rs.getInt(1);
+            int userID = rs.getInt(2);
             String japanese = rs.getString(3);
             String vietnamese = rs.getString(4);     
-            list.add(new UserWord(wordID,userID,japanese,vietnamese,topicID));
+            list.add(new UserWord(wordID,userID,topicID,japanese,vietnamese));
         }
         rs.close();
         return list;
