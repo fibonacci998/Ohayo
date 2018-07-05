@@ -97,7 +97,7 @@
                 Zeus battle
             </button> 
             <p style=" margin-left:200px">
-                <button class="btn-game-menu">
+                <button class="btn-game-menu"  onClick="location.href = 'minigames_CloudStorm.jsp'" >
                     Cloud Storm
                 </button> 
             </p>
