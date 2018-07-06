@@ -26,7 +26,7 @@ public class WordDAO {
             String userID = rs.getString(2);
             String japanese = rs.getString(3);
             String vietnamese = rs.getString(4);     
-            list.add(new UserWord(wordID,userID,japanese,vietnamese,topicID));
+            //list.add(new UserWord(wordID,userID,japanese,vietnamese,topicID));
         }
         rs.close();
         return list;
