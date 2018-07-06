@@ -224,7 +224,7 @@ var bombimg = ["wsparticle_06.png", "wsparticle_07.png", "wsparticle_04.png"];
 
 
 cGame.onclick = function() {
-    jmhgmzhrt();
+    startgame();
     cGame.blur();
     playing.addEventListener('ended', function() {
         this.currentTime = 0;
@@ -233,7 +233,7 @@ cGame.onclick = function() {
     playing.play();
 };
 restart.onclick = function() {
-    jmhgmzhrt();
+    startgame();
     initmainarr();
     win.pause();
     win.currentTime = 0;
@@ -250,7 +250,7 @@ Pause.onclick = function() {
 }
 
 //initialization
-function gtjtm() {
+function reset() {
     btg.innerHTML = "";
     flightpath = 0;
     scores = 0;
@@ -271,7 +271,7 @@ function gtjtm() {
     nowHp.style.width = "100px";
 }
 
-function gtjtmmyplane() {
+function resetmyplane() {
     var startTop = 600;
     var startLeft = 256 - planej[planelevel].width / 2;
     createplane(planelevel, planej, startTop, startLeft);
@@ -287,7 +287,7 @@ function gtjtmmyplane() {
 var cPlane = btg.getElementsByClassName("hostilePlane");
 var cBoss = btg.getElementsByClassName("boss");
 
-function jmhgmzhrt() {
+function startgame() {
 
     requestfullscreen();
     typeright = 0;
@@ -295,11 +295,11 @@ function jmhgmzhrt() {
     lock = false;
     startSound.play();
 
-    gtjtm(); //initialization
+    reset(); //initialization
     //billBoard() //Refresh the leaderboard
     var max = 0;
-    ngthmtscores(max, maxScores);
-    gtjtmmyplane();
+    createscores(max, maxScores);
+    resetmyplane();
     clearInterval(times);
     // Check interval
     times = setInterval(function() {
@@ -308,22 +308,22 @@ function jmhgmzhrt() {
             btg.style.backgroundPosition = "0px " + flightpath + "px";
             flightpath++; //Flight distance
             scores += 1;
-            ngthmtscores(scores, scoresBox);
+            createscores(scores, scoresBox);
             if (flightpath % bulletspeed == 0) {
                 // createbulletrows(bulletrows, bulletlevel) //Create bullets
             }
             movebullet(); //Move the bullets
-            ncxxjtcxjmfotplane(); //Randomly generated enemy
-            rxstcxjmfotplane(); //Move the enemy
-            nxoofqtkpoomt(cPlane); //Hit enemy aircraft detection
-            nxoofqtkpoomt(cBoss); //Hit boss
+            choosehostileplane(); //Randomly generated enemy
+            movehostileplane(); //Move the enemy
+            collidebullte(cPlane); //Hit enemy aircraft detection
+            collidebullte(cBoss); //Hit boss
             chooseboss();
             moveboss();
-            myplanenxoofqt(cPlane, jmgpnlmyplane); //Collision detection aircraft
-            myplanenxoofqt(cBoss, jmgpnlmyplane); //Collision detection aircraft
+            myplanecollide(cPlane, struckmyplane); //Collision detection aircraft
+            myplanecollide(cBoss, struckmyplane); //Collision detection aircraft
             var bDrop = btg.getElementsByClassName("bulletDrop");
             var hBullet = btg.getElementsByClassName("hBullet");
-            ngthmtflightpath(flightpath); //Number of kilometers generated
+            createflightpath(flightpath); //Number of kilometers generated
         }
     }, 20);
     /*
@@ -339,7 +339,7 @@ function jmhgmzhrt() {
 }
 
 //MyPlane injured
-function ktfuipgtq() {
+function beinjured() {
     bgRed.style.display = "block";
     setTimeout(function() {
         bgRed.style.display = "none";
@@ -347,26 +347,26 @@ function ktfuipgtq() {
 }
 //Aircraft collided with enemy aircraft
 
-function jmgpnlmyplane(hElement) {
+function struckmyplane(hElement) {
     if (userhp > 20) {
         masterbullet = false;
         userhp -= 20;
 
         audioInjure.play();
-        ktfuipgtq();
+        beinjured();
         nowHp.style.width = userhp + "px";
         if (hElement.className == "hostilePlane") {
-            kxrk(hElement);
+            bomb(hElement);
         }
     } else {
-        ktfuipgtq();
-        kxrk(hElement);
-        myplanekxrk();
+        beinjured();
+        bomb(hElement);
+        myplanebomb();
     }
 }
 
 //Number of kilometers generated
-function ngthmtflightpath(flightpath) {
+function createflightpath(flightpath) {
     flightpath = flightpath.toString();
     fPath.innerHTML = "";
     if (flightpath.length < 4) {
@@ -404,7 +404,7 @@ function ngthmtflightpath(flightpath) {
 }
 //Hit enemy aircraft detection
 
-function nxoofqtkpoomt(cPlane) {
+function collidebullte(cPlane) {
     var bullets = btg.getElementsByClassName("myBullet");
     //Bullet collision detection
     for (var i = 0; i < bullets.length; i++) {
@@ -428,12 +428,12 @@ function nxoofqtkpoomt(cPlane) {
                 }
                 if (cPlane[j].HP <= 0) {
                     scores = scores + cPlane[j].score;
-                    ngthmtscores(scores, scoresBox); //Generate a score
+                    createscores(scores, scoresBox); //Generate a score
                     if (cPlane[j].className == "boss") {
                         masterbullet = false;
                         bossView.style.display = "none";
                     }
-                    kxrk(cPlane[j]);
+                    bomb(cPlane[j]);
                 }
             }
         }
@@ -441,10 +441,10 @@ function nxoofqtkpoomt(cPlane) {
 }
 //One side of the aircraft explosion
 // My plane die
-function myplanekxrk() {
-    kxrk(myplane);
+function myplanebomb() {
+    bomb(myplane);
     var max = 0;
-    ngthmtscores(scores, overImg);
+    createscores(scores, overImg);
     gameOver.style.display = "block";
     //ispause = true;
     isdie = true;
@@ -514,7 +514,7 @@ function myplanekxrk() {
 }
 
 //Generate a score
-function ngthmtscores(scores, sElement) {
+function createscores(scores, sElement) {
     scores = scores.toString();
     sElement.innerHTML = "";
     for (var i = 0; i < scores.length; i++) {
@@ -525,7 +525,7 @@ function ngthmtscores(scores, sElement) {
 
 }
 //Aircraft Collision Detection
-function myplanenxoofqt(sth, fn) {
+function myplanecollide(sth, fn) {
     //Aircraft collision detection
     for (var j = 0; j < sth.length; j++) {
         var hLeft = parseInt(sth[j].style.left);
@@ -542,7 +542,7 @@ function myplanenxoofqt(sth, fn) {
     }
 }
 //Aircraft explosion
-function kxrk(bombPlane) {
+function bomb(bombPlane) {
     bombPlane.className = "bombPlane";
     bombPlane.style.backgroundImage = "url(img/" + bombimg[0] + ")";
     bombPlane.style.backgroundPosition = "center";
@@ -563,7 +563,7 @@ function kxrk(bombPlane) {
     }, 50);
 }
 //Move the enemy
-function rxstcxjmfotplane() {
+function movehostileplane() {
     var tutgrftj = btg.getElementsByClassName("hostilePlane");
     for (var i = 0; i < tutgrftj.length; i++) {
         tutgrftj[i].style.top = parseInt(tutgrftj[i].style.top) + tutgrftj[i].speed + "px";
@@ -594,7 +594,7 @@ function ghuqoxnhmfxu() {
     }
 }
 //Choose to generate the enemy
-function ncxxjtcxjmfotplane() {
+function choosehostileplane() {
     var pLeft = 0;
     var hp;
     if (flightpath % 7680 == 0) {
@@ -751,7 +751,7 @@ function createplane(level, planej, oTop, oLeft) {
 var lockEnter = false;
 window.onkeydown = function(e) {
     if (e.keyCode == 13 && lockEnter == false) {
-        jmhgmzhrt();
+        startgame();
         cGame.blur();
         var typeright = 0;
         var typewrong = 0;
@@ -925,7 +925,7 @@ var wordArr = [];
 
 //get 15 from 24 letters
 function initmainarr() {
-    mainArr = []; //gtjtm array
+    mainArr = []; //reset array
     for (var i = 0; i < 15; i++) {
         var random;
         do {
@@ -937,7 +937,7 @@ function initmainarr() {
 }
 // Init word with known start letter
 function initword() {
-    wordArr = [] //gtjtm array
+    wordArr = [] //reset array
     for (var i = 0; i < 15; i++) {
         var random = getrandom(addList[mainArr[i]].length, 0);
         wordArr.push(addList[mainArr[i]][random]);
