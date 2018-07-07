@@ -186,12 +186,12 @@ function enermy(width, height, speed, score, positionX, positionY, background, H
     this.background = background;
     this.HP = HP;
 }
-enermyone = new enermy(98, 76, 2, 100, -267, -474, "url(img/img_plane_enemy.png)", 1);
-enermytwo = new enermy(104, 76, 3, 100, -162, -474, "url(img/img_plane_enemy.png)", 1);
-enermythree = new enermy(114, 82, 2, 1000, -367, -440, "url(img/img_plane_enemy.png)", 2);
-enermyfour = new enermy(104, 76, 4, 200, -162, -474, "url(img/img_plane_enemy.png)", 2);
-enermyfive = new enermy(175, 133, 2, 500, -190, -340, "url(img/img_plane_enemy.png)", 5);
-enermysix = new enermy(260, 196, 2, 2000, 0, -2, "url(img/img_plane_enemy.png)", 20);
+enermyone = new enermy(150, 150, 2, 100, 0, 0, "url(img/storm1.png)", 1);
+enermytwo = new enermy(150, 150, 3, 100, 0, 0, "url(img/storm2.png)", 1);
+enermythree = new enermy(150, 150, 2, 1000, 0, 0, "url(img/storm3.png)", 2);
+enermyfour = new enermy(150, 150, 4, 200, 0, 0, "url(img/storm4.png)", 2);
+enermyfive = new enermy(150, 150, 2, 500, 0, 0, "url(img/storm5.png)", 5);
+enermysix = new enermy(150, 150, 2, 2000, 0, 0, "url(img/storm6.png)", 20);
 var tutgrftj = [enermyone, enermytwo, enermythree, enermyfour, enermyfive, enermysix];
 
 var bosses = [{
