@@ -97,28 +97,19 @@
       <jsp:useBean id="u" class="bean.UserWordBean" scope="session"/>
         <jsp:setProperty name="u" property="*"/>
         <jsp:setProperty name="topicID" property="*"/>
-        <
-        <div class="main_content"> 
+        
             <h2 id="title_learning">Learn flashcard</h2>
             <h2 id="table_title_learning">できる日本語</h2>
-        </div>
         <div class="main_content_flashcard">
-            <c:if test="${empty words}">
-                <div class="container_flashcard"> 
-                    <p>Nothing to show</p>
-                </div>
-            </c:if>
-            <c:otherwise>
             <c:forEach var="i" items="${u.words}">
                 <div class="container_flashcard"> 
                     <a> ${i.japanese}</a>
                     <a id="right"> ${i.vietnamese}</a>
                 </div>
             </c:forEach>
-            </c:otherwise>
         </div>
 
-        <div class="pagination">
+<!--        <div class="pagination">
             <c:forEach begin="1" end="${u.pages}" step="1" var="i">
                 <c:url var="next" value="topic_words.jsp">
                     <c:param name="page" value="${i}">${i}</c:param>
@@ -131,9 +122,9 @@
                     <a href="${next}">${i}</a>
                 </c:if>
             </c:forEach>
-            <!--<a href="learning.jsp" id="button_forward_learn">Back to Learning</a>-->
+            <a href="learning.jsp" id="button_forward_learn">Back to Learning</a>
 
-        </div>
+        </div>-->
         <a id="button_forward_learn" href="learning.jsp"><span>Back to Learning </span></a> 
   </div>
         

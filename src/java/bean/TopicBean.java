@@ -79,13 +79,4 @@ public class TopicBean {
         rs.close();
         return list;
     }
-    
-    public void insert(String name) throws SQLException{
-        String insert = "insert into Word_Topic values('?')";
-        ConnectDB conn = new ConnectDB();
-        PreparedStatement ps = conn.insertTopic(insert,name);
-        ps.setString(1, name);
-        conn.closeConnection();
-        ps.close();
-    }
 }

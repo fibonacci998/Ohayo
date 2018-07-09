@@ -19,15 +19,17 @@ import java.util.List;
 public class UserWordBean {
     private int page;
     private int pageSize;
-    private int topicID;
+    private String topicID;
 
-    public int getTopicID() {
+    public String getTopicID() {
         return topicID;
     }
 
-    public void setTopicID(int topicID) {
+    public void setTopicID(String topicID) {
         this.topicID = topicID;
     }
+
+
     
     private List<UserWord> list = new ArrayList<>();;
    
@@ -59,7 +61,7 @@ public class UserWordBean {
     }
      
     public int getRowCount()throws Exception {
-        String select = "select count(*) from Word_Topic";
+        String select = "select count(*) from User_Word";
         ConnectDB conn = new ConnectDB();
         ResultSet rs = conn.getData(select);
         int p = 0;
@@ -74,13 +76,13 @@ public class UserWordBean {
     public List<UserWord> getWords() throws Exception {
         ConnectDB conn = new ConnectDB();
         ResultSet rs = conn.getData("select * "
-                + "from User_Word where TopicID = "+topicID);
+                + "from User_Word where topicID = "+topicID);
         while (rs.next()) {   
             int wordID = rs.getInt(1);
             int userID = rs.getInt(2);
             String japanese = rs.getString(3);
             String vietnamese = rs.getString(4);     
-            list.add(new UserWord(wordID,userID,topicID,japanese,vietnamese));
+            list.add(new UserWord(wordID,userID,Integer.parseInt(topicID),japanese,vietnamese));
         }
         rs.close();
         return list;

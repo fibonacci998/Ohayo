@@ -142,7 +142,7 @@
     <form action="DeleteWordServlet" method="POST">
     <!-- modal delete content-->
       <c:forEach var="i" items="${t.topics}">
-          <input type="checkbox" name="topics" value="${i.topicID}">${i.topicName}</input>
+          <input type="checkbox" name="topics" value="${i.topicID}">${i.topicName}</input><br/>
           </c:forEach>
           <br/>
           <input id="button_delete_topic" type="submit" name="delete" value="delete selected" style="margin: 5px 300px;padding:10px;"/>
