@@ -7,6 +7,7 @@ package model;
 
 import DBConnect.ConnectDB;
 import entity.Topic;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,10 +33,16 @@ public class TopicDAO {
     }
     
     public void insert(String name) throws SQLException{
-        String insert = "insert into Word_Topic values('?')";
-        ConnectDB conn = new ConnectDB();
-        try (PreparedStatement ps = conn.insertTopic(insert,name)) {
-            conn.closeConnection();
-        }
+        String insert = "insert into Word_Topic values('"+name+"')";
+        Connection conn=new ConnectDB().getConnection();
+        conn.prepareStatement(insert).executeUpdate();
+        conn.close();
+    }
+    
+    public void delete(String topicID) throws SQLException{
+        String insert = "delete from Word_Topic where topicID='"+topicID+"'";
+        Connection conn=new ConnectDB().getConnection();
+        conn.prepareStatement(insert).executeUpdate();
+        conn.close();
     }
 }

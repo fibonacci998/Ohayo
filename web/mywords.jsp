@@ -139,21 +139,11 @@
   <!-- Modal content -->
   <div class="modal-content">
     <span class="close">&times;</span>
-    <form action="POST">
+    <form action="DeleteWordServlet" method="POST">
     <!-- modal delete content-->
-    <c:if test="${empty topics}">
-          <p>Nothing to show</p>
-      </c:if>
-      <c:if test="${not empty topics}">
       <c:forEach var="i" items="${t.topics}">
-              <c:url var="topicContent" value="#">
-                  <c:param name="topicID" value="${i.topicID}"/>
-                  <c:param name="topicName" value="${i.topicName}"/>
-              </c:url>
-       
-          <a href="${topicContent}">${i.topicName}</a>
+          <input type="checkbox" name="topics" value="${i.topicID}">${i.topicName}</input>
           </c:forEach>
-      </c:if>
           <br/>
           <input id="button_delete_topic" type="submit" name="delete" value="delete selected" style="margin: 5px 300px;padding:10px;"/>
     </form>
