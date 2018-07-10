@@ -12,6 +12,10 @@
         <servlet-name>DeleteWordServlet</servlet-name>
         <servlet-class>Controller.DeleteWordServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>Controller.TestServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyWordsServlet</servlet-name>
         <url-pattern>/MyWordsServlet</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>DeleteWordServlet</servlet-name>
         <url-pattern>/DeleteWordServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/TestServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

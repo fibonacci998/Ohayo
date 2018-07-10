@@ -337,7 +337,7 @@ nav {
 @-webkit-keyframes shrink {
   from {
     -webkit-transform: rotateY(0deg);
-    -moz-transform: rotateY0deg);
+    -moz-transform: rotateY(0deg);
     -o-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
     transform: rotateY(0deg);

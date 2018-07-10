@@ -696,7 +696,6 @@ h1 {
 .visible:before {
     content: '✈';
     left: 0;
-    //line-height: 40px;
 }
 
 .visible:before {
@@ -704,7 +703,6 @@ h1 {
     position: absolute;
     top: 0;
     color: #16a085;
-    //font-size: 42px;
     -webkit-animation-name: opacity;
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
