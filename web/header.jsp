@@ -39,7 +39,7 @@
     <form class="modal-content animate" action="/action_page.php">
         <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display = 'none'" class="close" title="Close Modal">&times;</span>
-            <img src="../images/avatar.jpg" width="100px" alt="Avatar" class="avatar"/>
+            <img src="./images/avatar.jpg" width="100px" alt="Avatar" class="avatar"/>
         </div>
 
         <div class="container">
@@ -55,7 +55,12 @@
         </div>
     </form>
 </div>
-
+<c:if test="${loginError != null}">
+    <script>
+        alert("${loginError}");
+        forward(needsignin.jsp);
+    </script>
+</c:if>
 
 <c:if test="${error != null}">
     <script>
