@@ -3,16 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/web/book.jsp</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/web/learning.jsp</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/web/topic_words.jsp</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/web/test.jsp</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/src/java/bean/UserWordBean.java</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/src/java/Controller/LessonServlet.java</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/src/java/Controller/TestServlet.java</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/web/mywords.jsp</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/src/java/Controller/MyWordsServlet.java</file>
-            <file>file:/C:/Users/Wasd/OneDrive/Project/Ohayo/src/java/Controller/DeleteWordServlet.java</file>
+            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/web/needsignin.jsp</file>
+            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/src/java/filter/LoginFilter.java</file>
+            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/web/index.jsp</file>
+            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/web/header.jsp</file>
         </group>
     </open-files>
 </project-private>
