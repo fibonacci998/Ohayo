@@ -37,10 +37,10 @@ and open the template in the editor.
 }
 
 .main_content_flashcard{
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin: 20px;
-    background-color: #f0f0f0
+    margin-bottom: 5%;
+    background-color: #f0f0f0;
+    padding:20px;
+
 }
 
 
@@ -66,8 +66,7 @@ and open the template in the editor.
 
 
 .container_flashcard {
-    margin: auto;
-    margin-bottom: 20px;
+
     margin-top: 20px;
     width: 900px;
     height: 50px;
@@ -78,7 +77,16 @@ and open the template in the editor.
 
 
 }
+button{
+    background-color: white;
+    color: black;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    padding: auto;
+    display: inline-block;
 
+}
 
 .container_flashcard a{
     font-family:Fredoka One;
@@ -126,6 +134,7 @@ and open the template in the editor.
     cursor: pointer;  
     float: right;
     margin-right: 10%;
+    
     /*padding: auto;*/
 }
 

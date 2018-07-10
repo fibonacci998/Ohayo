@@ -24,6 +24,8 @@ public class UserWord {
         this.vietnamese = vietnamese;
     }
 
+   
+
     public int getWordID() {
         return wordID;
     }
@@ -64,6 +66,9 @@ public class UserWord {
         this.vietnamese = vietnamese;
     }
 
-   
+    @Override
+    public String toString() {
+        return "UserWord{" + "wordID=" + wordID + ", userID=" + userID + ", topicID=" + topicID + ", japanese=" + japanese + ", vietnamese=" + vietnamese + '}';
+    }
     
 }

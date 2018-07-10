@@ -20,7 +20,17 @@ public class UserWordBean {
     private int page;
     private int pageSize;
     private String topicID;
+    private String topicName;
 
+    public String getTopicName() {
+        return topicName;
+    }
+
+    public void setTopicName(String topicName) {
+        this.topicName = topicName;
+    }
+
+    
     public String getTopicID() {
         return topicID;
     }
@@ -31,7 +41,6 @@ public class UserWordBean {
 
 
     
-    private List<UserWord> list = new ArrayList<>();;
    
     public int getPage() {
         return page;
@@ -77,12 +86,16 @@ public class UserWordBean {
         ConnectDB conn = new ConnectDB();
         ResultSet rs = conn.getData("select * "
                 + "from User_Word where topicID = "+topicID);
+        List<UserWord> list = new ArrayList<>();
         while (rs.next()) {   
             int wordID = rs.getInt(1);
             int userID = rs.getInt(2);
             String japanese = rs.getString(3);
             String vietnamese = rs.getString(4);     
             list.add(new UserWord(wordID,userID,Integer.parseInt(topicID),japanese,vietnamese));
+        }
+        for (int i = 0; i < list.size(); i++) {
+            
         }
         rs.close();
         return list;
