@@ -8,7 +8,9 @@ package bean;
 import DBConnect.ConnectDB;
 import entity.Topic;
 import entity.UserWord;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class UserWordBean {
     private int pageSize;
     private String topicID;
     private String topicName;
-
+    private String userID;
     public String getTopicName() {
         return topicName;
     }
@@ -100,4 +102,11 @@ public class UserWordBean {
         rs.close();
         return list;
     }
+    
+//    public void addWords() throws SQLException{
+//        String insert = "insert into User_Word values('')";
+//        Connection conn=new ConnectDB().getConnection();
+//        conn.prepareStatement(insert).executeUpdate();
+//        conn.close();
+//    }
 }
