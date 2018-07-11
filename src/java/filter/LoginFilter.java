@@ -112,9 +112,9 @@ public class LoginFilter implements Filter {
             HttpServletRequest httpRequest=(HttpServletRequest) request;
             HttpServletResponse httpResponse=(HttpServletResponse) response;
             HttpSession session=httpRequest.getSession();
-            if (session.getAttribute("user")==null){
+            if (session.getAttribute("usernameSession")==null){
                 session.setAttribute("loginError", "You must sign in first");
-                httpResponse.sendRedirect("/Ohayo/needsignin.jsp");
+                httpResponse.sendRedirect("/Ohayo/firstpage.jsp");
             }
             chain.doFilter(request, response);
         } catch (Throwable t) {

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <html lang="en">
 
     <head>
@@ -6,7 +8,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Login &amp; Register Templates</title>
+        <title>Welcome to Ohayo :)</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -32,7 +34,11 @@
     </head>
 
     <body>
-
+        <c:if test="${error != null}">
+            <script>
+                alert("${error}");
+            </script>
+        </c:if>
         <!-- Top content -->
         <div class="top-content">
         	
@@ -64,14 +70,14 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="login-form">
+				                    <form role="form" action="SigninServlet" method="post" class="login-form">
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-username">Username</label>
-				                        	<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+				                    		<label class="sr-only" for="txtUsername">Username</label>
+				                        	<input type="text" name="txtUsername" placeholder="Username..." class="form-username form-control" id="form-username">
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="form-password" placeholder="password..." class="form-password form-control" id="form-password">
+				                        	<label class="sr-only" for="txtPassword">Password</label>
+				                        	<input type="password" name="txtPassword" placeholder="password..." class="form-password form-control" id="form-password">
 				                        </div>
 				                        <button type="submit" class="btn">Sign in!</button>
 				                    </form>
@@ -85,38 +91,38 @@
                         <div class="col-sm-5">
                         	
                         	<div class="form-box">
-                        		<div class="form-top">
-	                        		<div class="form-top-left">
-	                        			<h3>Sign up now</h3>
-	                            		<p>Fill in the form below to get instant access:</p>
-	                        		</div>
-	                        		<div class="form-top-right">
-	                        			<i class="fa fa-pencil"></i>
-	                        		</div>
+                                    <div class="form-top">
+                                            <div class="form-top-left">
+                                                    <h3>Sign up now</h3>
+                                            <p>Fill in the form below to get instant access:</p>
+                                            </div>
+                                            <div class="form-top-right">
+                                                    <i class="fa fa-pencil"></i>
+                                            </div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="registration-form">
-				                    	
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
-				                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-username">Username</label>
-                                            <input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-password">Password</label>
-                                            <input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="sr-only" for="form-repassword">Re password</label>
-                                            <input type="password" name="form-repassword" placeholder="Re Password..." class="form-repassword form-control" id="form-repassword">
-                                        </div>
-				                        
-				                        <button type="submit" class="btn">Sign me up!</button>
-				                    </form>
-			                    </div>
+                                        <form role="form" action="SignupServlet" method="post" class="registration-form">
+
+                                            <div class="form-group">
+                                                    <label class="sr-only" for="txtEmail">Email</label>
+                                                    <input type="text" name="txtEmail" placeholder="Email..." class="form-email form-control" id="form-email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="txtUsername">Username</label>
+                                                <input type="text" name="txtUsername" placeholder="Username..." class="form-username form-control" id="form-username">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="txtPassword">Password</label>
+                                                <input type="password" name="txtPassword" placeholder="Password..." class="form-password form-control" id="form-password">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="sr-only" for="txtRePassword">Re password</label>
+                                                <input type="password" name="txtRePassword" placeholder="Re Password..." class="form-repassword form-control" id="form-repassword">
+                                            </div>
+
+                                            <button type="submit" class="btn">Sign me up!</button>
+                                        </form>
+                                    </div>
                         	</div>
                         	
                         </div>

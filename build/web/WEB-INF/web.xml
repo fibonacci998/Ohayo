@@ -6,10 +6,12 @@
     </filter>
     <filter-mapping>
         <filter-name>LoginFilter</filter-name>
+        <url-pattern>/index.jsp</url-pattern>
+        <url-pattern>/learning.jsp</url-pattern>
+        <url-pattern>/book.jsp</url-pattern>
         <url-pattern>/learning.jsp</url-pattern>
         <url-pattern>/test.jsp</url-pattern>
         <url-pattern>/minigames.jsp</url-pattern>
-        
     </filter-mapping>
     <servlet>
         <servlet-name>MyWordsServlet</servlet-name>
@@ -27,6 +29,14 @@
         <servlet-name>TestServlet</servlet-name>
         <servlet-class>Controller.TestServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SigninServlet</servlet-name>
+        <servlet-class>Controller.SigninServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignoutServlet</servlet-name>
+        <servlet-class>Controller.SignoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyWordsServlet</servlet-name>
         <url-pattern>/MyWordsServlet</url-pattern>
@@ -42,6 +52,14 @@
     <servlet-mapping>
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/TestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SigninServlet</servlet-name>
+        <url-pattern>/SigninServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignoutServlet</servlet-name>
+        <url-pattern>/SignoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

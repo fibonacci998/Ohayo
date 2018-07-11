@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/web/needsignin.jsp</file>
             <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/src/java/filter/LoginFilter.java</file>
-            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/web/index.jsp</file>
+            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/src/java/Controller/SigninServlet.java</file>
             <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/web/header.jsp</file>
+            <file>file:/C:/Users/tuans/Desktop/Git/New%20folder/ver_3_pull/Ohayo/src/java/Controller/SignoutServlet.java</file>
         </group>
     </open-files>
 </project-private>
