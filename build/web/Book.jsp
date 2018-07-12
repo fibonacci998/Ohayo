@@ -94,36 +94,50 @@
         <h2 id="title_book_page">Books may help you</h2>
 
         <!-- row 1 -->
-        <div class="book_border_left">
-          <img src="./images/minna.jpg" width="100%">
-          <p class="book_title">Minna no Nihongo</p>
-        </div>
-
-        <div class="book_border_left">
-          <img src="./images/shinka.jpg" width="100%" height="424px">
-          <p class="book_title">Shin kanzen masutā</p>
-        </div>
-
-        <div class="book_border_right">
-          <img src="./images/JBgrammar.jpg" width="100%" height="424px">
-          <p class="book_title">Basic Japanese Grammar</p>
-        </div>
+        <a href="https://drive.google.com/file/d/0B2ay4JgKNoPea2QzRjFwMXZQSW8/view" target="_blank">
+            <div class="book_border_left">
+                <img src="./images/minna.jpg" width="100%" height="424px">
+                <p class="book_title">Minna no Nihongo</p>
+            </div>
+        </a>
+        
+        <a href="https://www.slideshare.net/RANISUSEELA/shinkanzenmastern3bunpoupdf" target="_blank">
+            <div class="book_border_left">
+                <img src="./images/shinka.jpg" width="100%" height="424px">
+                <p class="book_title">Shin kanzen masutā</p>
+            </div>
+        </a>
+        
+        <a href="https://www.pdfdrive.net/a-dictionary-of-basic-japanese-grammar-e18719828.html" target="_blank">
+            <div class="book_border_right">
+                <img src="./images/JBgrammar.jpg" width="100%" height="424px">
+                <p class="book_title">Basic Japanese Grammar</p>
+            </div>
+        </a>
+        
 
         <!-- row 2 -->
-        <div class="book_border_left">
-          <img src="./images/JapaneseParticles.jpg" width="100%" height="424px">
-          <p class="book_title">Japanese Particles</p>
-        </div>
-
-        <div class="book_border_left">
-          <img src="./images/steppu .jpg" width="100%" height="424px">
-          <p class="book_title">Kanken gakushū steppu </p>
-        </div>
-
-        <div class="book_border_right">
-          <img src="./images/Readers.jpg" width="100%" height="424px">
-          <p class="book_title">Taishūkan Readers</p>
-        </div>
+        <a href="https://vi.scribd.com/document/7159952/A-Dictionary-of-Japanese-Particles" target="_blank">
+            <div class="book_border_left">
+            <img src="./images/JapaneseParticles.jpg" width="100%" height="424px">
+            <p class="book_title">Japanese Particles</p>
+            </div>
+        </a>
+        
+        <a href="https://vi.scribd.com/document/380345306/Kanken-Kanji-Gakushuu-Step-9" target="_blank"> 
+            <div class="book_border_left">
+            <img src="./images/steppu .jpg" width="100%" height="424px">
+            <p class="book_title">Kanken gakushū steppu </p>
+            </div>
+        </a>
+        
+        <a href="https://www.taishukan.co.jp/item/nihongo_tadoku/index_en.html" target="_blank">
+            <div class="book_border_right">
+            <img src="./images/Readers.jpg" width="100%" height="424px">
+            <p class="book_title">Taishūkan Readers</p>
+            </div>
+        </a>
+        
     </div>
   </div>
   <!-- End of Content -->

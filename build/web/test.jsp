@@ -6,15 +6,16 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Ohayo! | My words</title>
+<title>Ohayo! | Test</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="./css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="./css/home.css" type="text/css"/>
 <link rel="stylesheet" href="./css/test.css" type="text/css"/>
+<link rel="stylesheet" href="./css/learningStyle.css" type="text/css"/>
 <script src="./js/home.js"></script>
 </head>
 <body>
@@ -93,16 +94,18 @@
   <!--  -->
   <!-- the contents here -->
     <div class="main_content">
-      <jsp:useBean id="b" class="bean.LessonBean" scope="session"/>
+        <jsp:useBean id="b" class="bean.LessonBean" scope="session"/>
+        <jsp:useBean id="test" class="bean.TestBean" scope="session"/>
+
             <jsp:setProperty name="b" property="*"/>
 
-            <div class="main_content"> 
-                <h2 id="title_learning">Learning</h2>
+
+                <h2 id="title_learning">Test</h2>
                 <h2 id="table_title_learning">できる日本語</h2>
                 <h3 id="title_choose_lesson"> Choose one lesson</h3>
 
                 <c:forEach var="i" items="${b.lessons}">
-                    <c:url var="lessonContent" value="TestServlet">
+                    <c:url var="lessonContent" value="test_type.jsp">
                         <c:param name="lessonID" value="${i.id}"/>
                         <c:param name="lessonName" value="${i.name}"/>
                     </c:url>
@@ -111,7 +114,6 @@
                     </div>
                 </c:forEach>
 
-            </div>
 
             <div class="pagination">
                 
@@ -132,8 +134,7 @@
 
                 </c:forEach>
 
-                <table>
-                </table>
+
             </div>
       
     </div>

@@ -20,6 +20,10 @@
         <servlet-name>UserWordServlet</servlet-name>
         <servlet-class>Controller.TopicWordServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestScoreServlet</servlet-name>
+        <servlet-class>Controller.TestScoreServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>MyWordsServlet</servlet-name>
         <url-pattern>/MyWordsServlet</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>UserWordServlet</servlet-name>
         <url-pattern>/UserWordServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestScoreServlet</servlet-name>
+        <url-pattern>/TestScoreServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
