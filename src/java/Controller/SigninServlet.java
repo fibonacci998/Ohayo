@@ -9,18 +9,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.SignupDAO;
+import javax.servlet.http.HttpSession;
+import model.SigninDAO;
 
 /**
  *
  * @author tuans
  */
-public class SignupServlet extends HttpServlet {
+public class SigninServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +39,10 @@ public class SignupServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SignupServlet</title>");            
+            out.println("<title>Servlet SigninServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SignupServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet SigninServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,7 +60,7 @@ public class SignupServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        processRequest(request, response);
     }
 
     /**
@@ -74,24 +74,24 @@ public class SignupServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String email=request.getParameter("txtEmail");
             String username=request.getParameter("txtUsername");
             String password=request.getParameter("txtPassword");
-            String repassword=request.getParameter("txtRePassword");
-            SignupDAO signupDAO=new SignupDAO();
-            boolean checkExistEmail= signupDAO.checkEmailExist(email);
-            boolean checkExistUsername=signupDAO.checkUsernameExist(username);
-            if (!checkExistEmail && !checkExistUsername){
-                signupDAO.addNewUser(email, username, password);
-                request.setAttribute("error", "Sign up complete!!");
-            }             
-            else request.setAttribute("error", "email/username is existed");
-            request.getRequestDispatcher("firstpage.jsp").forward(request, response);
+            SigninDAO dao=new SigninDAO();
+            if (dao.checkUserValid(username, password)){
+                HttpSession session=request.getSession();
+                session.setAttribute("usernameSession", username);
+                session.setAttribute("typeUserSession", "normal");
+                session.setAttribute("userIDSession", dao.getUserID(username));
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }else{
+                request.getRequestDispatcher("firstpage.jsp").forward(request, response);
+            }
         } catch (Exception ex) {
-            Logger.getLogger(SignupServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SigninServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -25,28 +25,7 @@
 </head>
 <body>
     <div class="main">
-        <div class="header">
-            <div class="sign_home">
-                <span onclick="document.getElementById('id01').style.display = 'block'">Sign in</span> or <span onclick="document.getElementById('id02').style.display = 'block'">Sign up</span>
-            </div>
-            <div class="header_resize">
-                <div class="menu_nav">
-                    <ul>
-                        <li><a href="index.jsp"><span>Home Page</span></a></li>
-                        <li><a href="book.jsp"><span>Book</span></a></li>
-                        <li><a href="learning.jsp"><span>Learning</span></a></li>
-                        <li class="active"><a href="minigames.jsp"><span>Mini games</span></a></li>
-                        <li ><a href="test.jsp"><span>Test</span></a></li>
-                        <li ><a href="mywords.jsp"><span>My words</span></a></li>
-                    </ul>
-                </div>
-                <div class="logo">
-                    <h1><a href="index.jsp">Ohayo<span>!</span></a></h1>
-                </div>
-                <div class="clr"></div>
-            </div> 
-        </div>
-        <div>
+         <%@include file="header.jsp" %> 
             <div style="height:800px;width:100%;padding: auto">
                 <iframe src="CloudStormGame/index.html" style="top: 0; left: 5%; width: 99%; height: 100%;"/> 
             </div>

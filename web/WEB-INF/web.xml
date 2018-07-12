@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/index.jsp</url-pattern>
+        <url-pattern>/learning.jsp</url-pattern>
+        <url-pattern>/book.jsp</url-pattern>
+        <url-pattern>/learning.jsp</url-pattern>
+        <url-pattern>/test.jsp</url-pattern>
+        <url-pattern>/minigames.jsp</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>MyWordsServlet</servlet-name>
         <servlet-class>Controller.MyWordsServlet</servlet-class>
@@ -17,12 +30,21 @@
         <servlet-class>Controller.TestServlet</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
+        <servlet-name>SigninServlet</servlet-name>
+        <servlet-class>Controller.SigninServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignoutServlet</servlet-name>
+        <servlet-class>Controller.SignoutServlet</servlet-class>
+=======
         <servlet-name>UserWordServlet</servlet-name>
         <servlet-class>Controller.TopicWordServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TestScoreServlet</servlet-name>
         <servlet-class>Controller.TestScoreServlet</servlet-class>
+>>>>>>> master
     </servlet>
     <servlet-mapping>
         <servlet-name>MyWordsServlet</servlet-name>
@@ -41,12 +63,21 @@
         <url-pattern>/TestServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
+        <servlet-name>SigninServlet</servlet-name>
+        <url-pattern>/SigninServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignoutServlet</servlet-name>
+        <url-pattern>/SignoutServlet</url-pattern>
+=======
         <servlet-name>UserWordServlet</servlet-name>
         <url-pattern>/UserWordServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TestScoreServlet</servlet-name>
         <url-pattern>/TestScoreServlet</url-pattern>
+>>>>>>> master
     </servlet-mapping>
     <session-config>
         <session-timeout>

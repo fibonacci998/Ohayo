@@ -29,11 +29,14 @@ public class ConnectDB {
         //call driver {using multi driver}
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            //get connect
+            //use database online
             conn=DriverManager.getConnection("jdbc:sqlserver://homersimpson.database.windows.net:1433;"
                     + "database=dbLearnJapaneseProgram;user=bart@homersimpson;"
                     + "password=lisa12#$;encrypt=true;trustServerCertificate=false;"
                     + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+            //use database offline
+            //conn=DriverManager.getConnection("jdbc:sqlserver://TREAPT:1433;databaseName=dbLearnJapaneseProgram", "sa", "123456");
+            
             System.out.println("Connected");
         } catch (Exception e) {
             e.printStackTrace();
