@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/home.css" type="text/css"/>
     <script src="./js/home.js"></script>
     <div class="sign_home">
-        hello ${sessionScope.usernameSession}
+        hello ${sessionScope.usernameSession} with id ${sessionScope.userIDSession}
         <a href="SignoutServlet">Sign out</a>
     </div>
     <div class="header_resize">

@@ -26,6 +26,16 @@ public class SigninDAO {
         conn.close();
         return null;
     }
+    
+    public String getUserID(String username) throws Exception{
+        Connection conn= new ConnectDB().getConnection();
+        ResultSet rs=conn.prepareStatement("SELECT UserID FROM dbo.[User] WHERE Username='"+username+"'").executeQuery();
+        while(rs.next()){
+            String userID=rs.getString(1);
+            return userID;
+        }
+        return null;
+    }
     public Boolean checkUserValid(String username, String password) throws Exception{
         Connection conn= new ConnectDB().getConnection();
         ResultSet rs=conn.prepareStatement("SELECT Password FROM dbo.[User] WHERE Username='"+username+"'").executeQuery();
