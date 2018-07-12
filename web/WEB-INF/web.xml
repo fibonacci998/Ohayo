@@ -30,21 +30,20 @@
         <servlet-class>Controller.TestServlet</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
         <servlet-name>SigninServlet</servlet-name>
         <servlet-class>Controller.SigninServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SignoutServlet</servlet-name>
         <servlet-class>Controller.SignoutServlet</servlet-class>
-=======
+    </servlet>
+    <servlet>
         <servlet-name>UserWordServlet</servlet-name>
         <servlet-class>Controller.TopicWordServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TestScoreServlet</servlet-name>
         <servlet-class>Controller.TestScoreServlet</servlet-class>
->>>>>>> master
     </servlet>
     <servlet-mapping>
         <servlet-name>MyWordsServlet</servlet-name>
@@ -63,21 +62,20 @@
         <url-pattern>/TestServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/SigninServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SignoutServlet</servlet-name>
         <url-pattern>/SignoutServlet</url-pattern>
-=======
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>UserWordServlet</servlet-name>
         <url-pattern>/UserWordServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TestScoreServlet</servlet-name>
         <url-pattern>/TestScoreServlet</url-pattern>
->>>>>>> master
     </servlet-mapping>
     <session-config>
         <session-timeout>
