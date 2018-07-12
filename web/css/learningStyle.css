@@ -103,7 +103,7 @@ and open the template in the editor.
 .container_lessons {
     margin: auto;
     padding: 20px;
-    width: 1000px;
+    width: 900px;
     height: 70px;
 }
 
@@ -142,7 +142,7 @@ and open the template in the editor.
 .select_container_learning{
 	margin: auto;
 	padding:10px;
-	padding-top:20px;
+
 	width: 1000px;
 	height: 30px;
 	overflow: auto;
