@@ -21,11 +21,11 @@ import java.util.List;
 public class RecentLessonDAO {
     
     public void insert(RecentLesson reLesson) throws Exception{
-        String query = "insert into Lesson_Recently values (1, ?)";
+        String query = "insert into Lesson_Recently values (?, ?)";
         Connection conn = new ConnectDB().getConnection();
         PreparedStatement ps = conn.prepareStatement(query); 
-//        ps.setString(1, reLesson.getUserId());
-        ps.setString(1, reLesson.getLessonId());
+        ps.setInt(1, reLesson.getUserId());
+        ps.setString(2, reLesson.getLessonId());
         ps.executeUpdate();
         conn.close();
     }
