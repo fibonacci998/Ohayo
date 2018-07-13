@@ -42,6 +42,9 @@ public class ConnectDB {
             e.printStackTrace();
         }         
     }
+    
+
+    
     public Connection getConnection(){
         return this.conn;
     }
@@ -77,7 +80,7 @@ public class ConnectDB {
         
     }
 
-    public CallableStatement prepareCall(String select, int from, int to) {
+    public CallableStatement prepareCallLesson(String select, int from, int to) {
         CallableStatement cs = null;
         try {
            cs = conn.prepareCall(select);
@@ -89,6 +92,18 @@ public class ConnectDB {
         return cs;
     }
     
+    public CallableStatement prepareCallWord(String select, int from, int to, String lessonID) {
+        CallableStatement cs = null;
+        try {
+           cs = conn.prepareCall(select);
+           cs.setInt(1, from);
+           cs.setInt(2, to);
+           cs.setString(3, lessonID);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return cs;
+    }
     
    
 }
