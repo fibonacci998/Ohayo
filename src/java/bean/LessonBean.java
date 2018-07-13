@@ -68,7 +68,7 @@ public class LessonBean {
         int to = page * pageSize;
         String select = "{call GetLessons(?,?)}";
         ConnectDB conn = new ConnectDB();
-        CallableStatement cs = conn.prepareCall(select, from, to);    
+        CallableStatement cs = conn.prepareCallLesson(select, from, to);    
         ResultSet rs = cs.executeQuery();//execute store
         List<Lesson> list = new ArrayList<>();
         while(rs.next()) {

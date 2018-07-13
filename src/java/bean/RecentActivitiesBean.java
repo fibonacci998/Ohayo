@@ -19,18 +19,29 @@ import java.util.List;
  */
 public class RecentActivitiesBean implements Serializable {
 
+    private int userIDSession;
+
+    public int getUserIDSession() {
+        return userIDSession;
+    }
+
+    public void setUserIDSession(int userIDSession) {
+        this.userIDSession = userIDSession;
+    }
 
     public RecentActivitiesBean() {
     }
 
-
     public List<Dictionary> getRecentWords() throws Exception {
-        String select = "SELECT TOP 6 * FROM User_Word order by WordID desc";
-
+//        String select = "SELECT TOP 6 * FROM User_Word order by WordID desc";
 //        String select = "SELECT TOP 7 * FROM Dictionary_Main where id != 20 and "
 //                + " id != 27 and LessonID = '"+choosenID
 //                + "' ORDER BY NEWID()";
 
+        System.out.println("userID in BEAN " + userIDSession);
+        String select = "SELECT TOP 6 * FROM User_Word "
+                + " where UserID = " + userIDSession
+                + " order by WordID desc ";
         ConnectDB conn = new ConnectDB();
         ResultSet rs = conn.getData(select);
         List<Dictionary> list = new ArrayList<>();
@@ -43,24 +54,26 @@ public class RecentActivitiesBean implements Serializable {
         rs.close();
         return list;
     }
-    
-    
+
     public List<RecentLesson> getRecentLessons() throws Exception {
         //this query must contain the ID of user, which would define the latest
         //activities of an specific user in community. 
-        
+
         //----> must be updated later
         String select = "SELECT TOP 6 lr.LessonID, l.LessonName FROM Lesson_Recently lr "
-                + " inner join Lesson l on lr.LessonID = l.LessonID order by lr.ID desc";
+                + " inner join Lesson l "
+                + " on lr.LessonID = l.LessonID "
+                + " where lr.UserID = " + userIDSession
+                + " order by lr.ID desc";
         ConnectDB conn = new ConnectDB();
         ResultSet rs = conn.getData(select);
         List<RecentLesson> list = new ArrayList<>();
         while (rs.next()) {
-        
+
             String lessonID = rs.getString("LessonID");
             String lessonName = rs.getString("LessonName");
             list.add(new RecentLesson(lessonID, lessonName));
-            System.out.println(lessonID+"\t"+lessonName);
+            System.out.println(lessonID + "\t" + lessonName);
         }
         rs.close();
         return list;
