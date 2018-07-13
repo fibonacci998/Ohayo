@@ -86,7 +86,8 @@ public class SigninServlet extends HttpServlet {
                 session.setAttribute("usernameSession", username);
                 session.setAttribute("typeUserSession", "normal");
                 session.setAttribute("userIDSession", dao.getUserID(username));
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                String url = "index.jsp?userIDSession="+dao.getUserID(username);
+                request.getRequestDispatcher(url).forward(request, response);
             }else{
                 request.getRequestDispatcher("firstpage.jsp").forward(request, response);
             }

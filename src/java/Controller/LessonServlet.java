@@ -5,16 +5,13 @@
  */
 package Controller;
 
-import entity.Dictionary;
 import entity.RecentLesson;
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model.DictionaryDAO;
 import model.RecentLessonDAO;
 
 /**
@@ -40,8 +37,10 @@ public class LessonServlet extends HttpServlet {
         try {
            
             String id = request.getParameter("lessonID");
+            int userID = Integer.valueOf(request.getParameter("userID"));
             System.out.println("lessonID = " + id);
-            RecentLesson recentLesson = new RecentLesson(1, id);
+            System.out.println("userID = "+userID);
+            RecentLesson recentLesson = new RecentLesson(userID, id);
             RecentLessonDAO dao = new RecentLessonDAO();
             dao.insert(recentLesson);
             RequestDispatcher rd = request.getRequestDispatcher("flashcard.jsp");
