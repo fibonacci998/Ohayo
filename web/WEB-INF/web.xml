@@ -77,6 +77,14 @@
         <servlet-name>TestScoreServlet</servlet-name>
         <url-pattern>/TestScoreServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>LessonServlet</servlet-name>
+        <servlet-class>Controller.LessonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LessonServlet</servlet-name>
+        <url-pattern>/LessonServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
