@@ -32,6 +32,7 @@
                     <c:url var="lessonContent" value="LessonServlet">
                         <c:param name="lessonID" value="${i.id}"/>
                         <c:param name="lessonName" value="${i.name}"/>
+                        <c:param name="userID" value="${sessionScope.userIDSession}"/>
                     </c:url>
                     <div class="container_lessons"> 
                         <a href="${lessonContent}">Lesson ${i.id}： ${i.name}</a>
